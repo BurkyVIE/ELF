@@ -1,0 +1,44 @@
+Week,Kickoff,Guest,Home,Pts_G,Pts_H
+1,2021-06-19 18:00 CET,Cologne Centurions,Panthers Wroclaw,39,55
+1,2021-06-19 19:00 CET,Stuttgart Surge,Barcelona Dragons,21,17
+1,2021-06-20 15:00 CET,Leipzig Kings,Berlin Thunder,37,27
+1,2021-06-20 15:00 CET,Frankfurt Galaxy,Hamburg Sea Devils,15,17
+2,2021-06-26 18:00 CET,Leipzig Kings,Panthers Wroclaw,28,54
+2,2021-06-27 15:00 CET,Barcelona Dragons,Cologne Centurions,12,40
+2,2021-06-27 15:00 CET,Frankfurt Galaxy,Stuttgart Surge,42,20
+3,2021-07-03 19:00 CET,Hamburg Sea Devils,Barcelona Dragons,32,14
+3,2021-07-04 15:00 CET,Stuttgart Surge,Berlin Thunder,19,40
+3,2021-07-04 15:00 CET,Panthers Wroclaw,Frankfurt Galaxy,13,22
+3,2021-07-04 15:00 CET,Cologne Centurions,Leipzig Kings,48,47
+4,2021-07-11 15:00 CET,Frankfurt Galaxy,Cologne Centurions,41,20
+4,2021-07-11 15:00 CET,Leipzig Kings,Stuttgart Surge,24,27
+4,2021-07-11 18:00 CET,Berlin Thunder,Hamburg Sea Devils,6,44
+5,2021-07-17 18:00 CET,Barcelona Dragons,Frankfurt Galaxy,22,42
+5,2021-07-18 15:00 CET,Panthers Wroclaw,Berlin Thunder,45,26
+5,2021-07-18 15:00 CET,Hamburg Sea Devils,Leipzig Kings,55,0
+6,2021-07-24 15:00 CET,Hamburg Sea Devils,Panthers Wroclaw,26,23
+6,2021-07-24 19:00 CET,Berlin Thunder,Barcelona Dragons,16,48
+6,2021-07-25 15:00 CET,Cologne Centurions,Stuttgart Surge,39,23
+7,2021-07-31 18:00 CET,Barcelona Dragons,Hamburg Sea Devils,17,22
+7,2021-08-01 15:00 CET,Panthers Wroclaw,Cologne Centurions,31,33
+7,2021-08-01 15:00 CET,Stuttgart Surge,Frankfurt Galaxy,3,57
+7,2021-08-01 15:00 CET,Berlin Thunder,Leipzig Kings,24,37
+8,2021-08-07 19:00 CET,Cologne Centurions,Barcelona Dragons,51,60
+8,2021-08-08 15:00 CET,Hamburg Sea Devils,Frankfurt Galaxy,9,35
+8,2021-08-08 15:00 CET,Stuttgart Surge,Leipzig Kings,23,49
+9,2021-08-14 13:00 CET,Hamburg Sea Devils,Berlin Thunder,28,20
+9,2021-08-15 15:00 CET,Frankfurt Galaxy,Panthers Wroclaw,36,7
+9,2021-08-15 15:00 CET,Barcelona Dragons,Stuttgart Surge,30,12
+10,2021-08-21 15:00 CET,Leipzig Kings,Cologne Centurions,42,24
+10,2021-08-22 13:00 CET,Barcelona Dragons,Berlin Thunder,3,19
+10,2021-08-22 15:00 CET,Panthers Wroclaw,Hamburg Sea Devils,30,24
+11,2021-08-28 19:00 CET,Frankfurt Galaxy,Barcelona Dragons,22,14
+11,2021-08-29 13:00 CET,Berlin Thunder,Panthers Wroclaw,12,35
+11,2021-08-29 15:00 CET,Leipzig Kings,Hamburg Sea Devils,18,17
+11,2021-08-29 17:00 CET,Stuttgart Surge,Cologne Centurions,9,19
+12,2021-09-05 15:00 CET,Cologne Centurions,Frankfurt Galaxy,7,45
+12,2021-09-05 15:00 CET,Panthers Wroclaw,Leipzig Kings,21,13
+12,2021-09-05 15:00 CET,Berlin Thunder,Stuttgart Surge,38,0
+98,2021-09-11 14:45 CET,Cologne Centurions,Frankfurt Galaxy,6,36
+98,2021-09-12 14:45 CET,Panthers Wroclaw,Hamburg Sea Devils,27,30
+99,2021-09-26 15:00 CET,Hamburg Sea Devils,Frankfurt Galaxy,30,32
