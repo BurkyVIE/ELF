@@ -53,12 +53,12 @@ Week,Kickoff,Guest,Home,Pts_G,Pts_H
 11,2022-08-14 15:00 CET,Berlin Thunder,Panthers Wroclaw,29,12
 11,2022-08-14 15:00 CET,Vienna Vikings,Frankfurt Galaxy,8,42
 11,2022-08-14 15:00 CET,Stuttgart Surge,Raiders Tirol,3,44
-12,2022-08-20 12:00 CET,Stuttgart Surge,Barcelona Dragons,,
-12,2022-08-20 12:00 CET,Hamburg Sea Devils,Berlin Thunder,,
-12,2022-08-21 12:00 CET,Frankfurt Galaxy,Rhein Fire,,
-12,2022-08-21 12:00 CET,Istanbul Rams,Vienna Vikings,,
-12,2022-08-21 12:00 CET,Cologne Centurions,Raiders Tirol,,
-12,2022-08-21 12:00 CET,Panthers Wroclaw,Leipzig Kings,,
+12,2022-08-20 18:00 CET,Stuttgart Surge,Barcelona Dragons,8,62
+12,2022-08-21 15:00 CET,Frankfurt Galaxy,Rhein Fire,21,23
+12,2022-08-21 15:00 CET,Istanbul Rams,Vienna Vikings,22,37
+12,2022-08-21 15:00 CET,Cologne Centurions,Raiders Tirol,20,45
+12,2022-08-21 15:00 CET,Hamburg Sea Devils,Berlin Thunder,39,17
+12,2022-08-21 15:00 CET,Panthers Wroclaw,Leipzig Kings,41,37
 13,2022-08-27 12:00 CET,Berlin Thunder,Istanbul Rams,,
 13,2022-08-27 12:00 CET,Rhein Fire,Cologne Centurions,,
 13,2022-08-28 12:00 CET,Barcelona Dragons,Vienna Vikings,,
