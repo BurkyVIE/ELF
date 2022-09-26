@@ -42,7 +42,11 @@ results <- bind_rows(
                             PF == PA ~ "T",
                             TRUE ~ NA_character_)) %>% 
   relocate(Home, .after = "Team") %>% 
-  arrange(Kickoff)
+  arrange(Kickoff) |>
+  left_join(teaminfo_elf, by = c("Team", "Season")) |>
+  nest(Teamdata = Franchise:Conference) |> 
+  left_join(teaminfo_elf, by = c("Opponent" = "Team", "Season")) |> 
+  nest(Oppdata = Franchise:Conference)
 
 rm(raw)
 
