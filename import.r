@@ -52,7 +52,8 @@ rm(raw)
 
 # standings ----
 standings <- results %>%
-  select(Season, Week, Kickoff, Team, Result, PF, PA) %>% 
+  select(Season, Week, Kickoff, Team, Teamdata, Result, PF, PA) %>% 
+  unnest(Teamdata) |> 
   # group_by(Season) %>% 
   complete(Week = 1:max(Week[Week < 30]), nesting(Season, Team), # add bye-weeks
            fill = list(PF = 0, PA = 0)) %>% 
@@ -65,13 +66,12 @@ standings <- results %>%
          Post = Week > 30) %>% 
   group_by(Season, Team, Post) %>%
   mutate_at(.vars = vars(PF:T), .funs = cumsum) %>% 
-  select(Season, Week, Kickoff, Team, Result, Post, PFc = PF, PAc = PA, W:T) %>%
+  select(Season, Week, Kickoff, Team, Franchise, Division, Conference, Result, Post, PFc = PF, PAc = PA, W:T) %>%
   ungroup() %>%
   mutate(Pct = ((W + 1/2 * T) / (W + L + T)) %>%
       round(3),
-    WLT = case_when(
-      T == 0 ~ paste0("(", W, "-", L, ")"),
-      TRUE ~ paste0("(", W, "-", L, "-", T, ")"))) %>% 
-  left_join(teaminfo_elf, by = c("Season", "Team")) %>% # add remaining Infos
+      WLT = case_when(
+        T == 0 ~ paste0("(", W, "-", L, ")"),
+        TRUE ~ paste0("(", W, "-", L, "-", T, ")"))) %>% 
   select(Season:Team, Franchise:Conference, Kickoff:WLT) %>% 
   arrange(Season, Week, -Pct, -PFc, PAc)
