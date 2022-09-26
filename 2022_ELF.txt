@@ -59,15 +59,18 @@ Week,Kickoff,Guest,Home,Pts_G,Pts_H
 12,2022-08-21 15:00 CET,Cologne Centurions,Raiders Tirol,20,45
 12,2022-08-21 15:00 CET,Hamburg Sea Devils,Berlin Thunder,39,17
 12,2022-08-21 15:00 CET,Panthers Wroclaw,Leipzig Kings,41,37
-13,2022-08-27 12:00 CET,Berlin Thunder,Istanbul Rams,,
-13,2022-08-27 12:00 CET,Rhein Fire,Cologne Centurions,,
-13,2022-08-28 12:00 CET,Barcelona Dragons,Vienna Vikings,,
-13,2022-08-28 12:00 CET,Raiders Tirol,Frankfurt Galaxy,,
-13,2022-08-28 12:00 CET,Panthers Wroclaw,Hamburg Sea Devils,,
-13,2022-08-28 12:00 CET,Leipzig Kings,Stuttgart Surge,,
-14,2022-09-03 12:00 CET,Hamburg Sea Devils,Barcelona Dragons,,
-14,2022-09-03 12:00 CET,Cologne Centurions,Istanbul Rams,,
-14,2022-09-04 12:00 CET,Raiders Tirol,Berlin Thunder,,
-14,2022-09-04 12:00 CET,Stuttgart Surge,Frankfurt Galaxy,,
-14,2022-09-04 12:00 CET,Leipzig Kings,Rhein Fire,,
-14,2022-09-04 12:00 CET,Vienna Vikings,Panthers Wroclaw,,
+13,2022-08-27 15:00 CET,Berlin Thunder,Istanbul Rams,38,14
+13,2022-08-27 17:00 CET,Rhein Fire,Cologne Centurions,59,37
+13,2022-08-28 15:00 CET,Barcelona Dragons,Vienna Vikings,18,24
+13,2022-08-28 15:00 CET,Leipzig Kings,Stuttgart Surge,38,0
+13,2022-08-28 15:00 CET,Raiders Tirol,Frankfurt Galaxy,33,36
+13,2022-08-28 15:00 CET,Panthers Wroclaw,Hamburg Sea Devils,0,17
+14,2022-09-03 15:00 CET,Cologne Centurions,Istanbul Rams,43,30
+14,2022-09-03 18:00 CET,Hamburg Sea Devils,Barcelona Dragons,24,21
+14,2022-09-04 15:00 CET,Raiders Tirol,Berlin Thunder,37,10
+14,2022-09-04 15:00 CET,Leipzig Kings,Rhein Fire,34,31
+14,2022-09-04 15:00 CET,Vienna Vikings,Panthers Wroclaw,6,42
+14,2022-09-04 15:00 CET,Stuttgart Surge,Frankfurt Galaxy,13,37
+98,2022-09-10 14:45 CET,Raiders Tirol,Hamburg Sea Devils,7,19
+98,2022-09-11 14:45 CET,Barcelona Dragons,Vienna Vikings,12,39
+99,2022-09-25 14:45 CET,Vienna Vikings,Hamburg Sea Devils,27,15
