@@ -2,7 +2,7 @@
 library(tidyverse)
 
 # DATA ----
-present <- 2024
+present <- 2023
 
 ## Complete list of Franchise, Team, ... by Season ----
 teamdata_elf <- tribble(~Franchise, ~Team, ~Conference, ~Division, ~HomeField,
@@ -10,7 +10,8 @@ teamdata_elf <- tribble(~Franchise, ~Team, ~Conference, ~Division, ~HomeField,
       "Centurions", tribble(~Team, ~Season,
                             "Cologne Centurions", 2021:present),
                     tribble(~Conference, ~Season,
-                            "Southern", 2022:present),
+                            "Southern", 2022,
+                            "Western", 2023:present),
                     tribble(~Division, ~Season,
                             "South", 2021),
                     tribble(~Stadium, ~Location, ~Lat, ~Long, ~Season,
@@ -18,7 +19,8 @@ teamdata_elf <- tribble(~Franchise, ~Team, ~Conference, ~Division, ~HomeField,
          "Dragons", tribble(~Team, ~Season,
                             "Barcelona Dragons", 2021:present),
                     tribble(~Conference, ~Season,
-                            "Southern", 2022:present),
+                            "Southern", 2022,
+                            "Central", 2023:present),
                     tribble(~Division, ~Season,
                             "South", 2021),
                     tribble(~Stadium, ~Location, ~Lat, ~Long, ~Season,
@@ -26,16 +28,17 @@ teamdata_elf <- tribble(~Franchise, ~Team, ~Conference, ~Division, ~HomeField,
       "Enthroners", tribble(~Team, ~Season,
                             "Fehérvár Enthroners", 2023:present),
                     tribble(~Conference, ~Season,
-                            "Expansion", 2023:present),
+                            "Eastern", 2023:present),
                     tribble(~Division, ~Season,
                             NA, NA),
                     tribble(~Stadium, ~Location, ~Lat, ~Long, ~Season,
-                            "NA", "Székesfehérvár, HU", 47.195556, 18.408889, 2023:present),
+                            "MÁV-Előre-Stadion", "Székesfehérvár, HU", 47.183636, 18.434803, 2023:present),
 ### F G H I J ----
             "Fire", tribble(~Team, ~Season,
                             "Rhein Fire", 2022:present),
                     tribble(~Conference, ~Season,
-                            "Southern", 2022:present),
+                            "Southern", 2022,
+                            "Western", 2023:present),
                     tribble(~Division, ~Season,
                             NA, NA),
                     tribble(~Stadium, ~Location, ~Lat, ~Long, ~Season,
@@ -43,7 +46,8 @@ teamdata_elf <- tribble(~Franchise, ~Team, ~Conference, ~Division, ~HomeField,
           "Galaxy", tribble(~Team, ~Season,
                             "Frankfurt Galaxy", 2021:present),
                     tribble(~Conference, ~Season,
-                            "Central", 2022:present),
+                            "Central", 2022,
+                            "Western", 2023:present),
                     tribble(~Division, ~Season,
                             "South", 2021),
                     tribble(~Stadium, ~Location, ~Lat, ~Long, ~Season,
@@ -51,16 +55,17 @@ teamdata_elf <- tribble(~Franchise, ~Team, ~Conference, ~Division, ~HomeField,
           "Guards", tribble(~Team, ~Season,
                             "Helvetic Guards", 2023:present),
                     tribble(~Conference, ~Season,
-                            "Expansion", 2023:present),
+                            "Central", 2023:present),
                     tribble(~Division, ~Season,
                             NA, NA),
                     tribble(~Stadium, ~Location, ~Lat, ~Long, ~Season,
-                            NA, "Zürich, CH", 47.374444, 8.541111, 2023:present),
+                            "Sportpark Bergholz", "Zürich, CH", 47.458333, 9.037222, 2023:present),
 ### K L M N O ----
            "Kings", tribble(~Team, ~Season,
                             "Leipzig Kings", 2021:present),
                     tribble(~Conference, ~Season,
-                            "Northern", 2022:present),
+                            "Northern", 2022,
+                            "Eastern", 2023:present),
                     tribble(~Division, ~Season,
                             "North", 2021),
                     tribble(~Stadium, ~Location, ~Lat, ~Long, ~Season,
@@ -69,16 +74,17 @@ teamdata_elf <- tribble(~Franchise, ~Team, ~Conference, ~Division, ~HomeField,
            "Lions", tribble(~Team, ~Season,
                             "Prague Lions", 2023:present),
                     tribble(~Conference, ~Season,
-                            "Expansion", 2023:present),
+                            "Eastern", 2023:present),
                     tribble(~Division, ~Season,
                             NA, NA),
                     tribble(~Stadium, ~Location, ~Lat, ~Long, ~Season,
-                            NA, "Prague, CZ", 50.0875, 14.421389, 2023:present),
+                            "tbd", "Prague, CZ", 50.0875, 14.421389, 2023:present),
 ### P Q R S T ----
         "Panthers", tribble(~Team, ~Season,
                             "Panthers Wroclaw", 2021:present),
                     tribble(~Conference, ~Season,
-                            "Northern", 2022:present),
+                            "Northern", 2022,
+                            "Eastern", 2023:present),
                     tribble(~Division, ~Season,
                             "North", 2021),
                     tribble(~Stadium, ~Location, ~Lat, ~Long, ~Season,
@@ -86,11 +92,11 @@ teamdata_elf <- tribble(~Franchise, ~Team, ~Conference, ~Division, ~HomeField,
         "Paris FT", tribble(~Team, ~Season,
                             "Paris Football Team", 2023:present),
                     tribble(~Conference, ~Season,
-                            "Expansion", 2023:present),
+                            "Western", 2023:present),
                     tribble(~Division, ~Season,
                             NA, NA),
                     tribble(~Stadium, ~Location, ~Lat, ~Long, ~Season,
-                            NA, "Paris, FR", 48.856613, 2.352222, 2023:present),
+                            "tbd", "Paris, FR", 48.856613, 2.352222, 2023:present),
          "Raiders", tribble(~Team, ~Season,
                             "Raiders Tirol", 2022:present),
                     tribble(~Conference, ~Season,
@@ -100,25 +106,25 @@ teamdata_elf <- tribble(~Franchise, ~Team, ~Conference, ~Division, ~HomeField,
                     tribble(~Stadium, ~Location, ~Lat, ~Long, ~Season,
                             "Tivoli Stadion Tirol", "Innsbruck, AT", 47.255833, 11.410833, 2022:present),
             "Rams", tribble(~Team, ~Season,
-                            "Istanbul Rams", 2022:present),
+                            "Istanbul Rams", c(2022, NULL)),
                     tribble(~Conference, ~Season,
-                            "Southern", 2022:present),
+                            "Southern", 2022),
                     tribble(~Division, ~Season,
                             NA, NA),
                     tribble(~Stadium, ~Location, ~Lat, ~Long, ~Season,
-                            "Maltepe Hasan Polat Stadium", "Istanbul, TR", 40.9205, 29.1313, 2022:present),
+                            "Maltepe Hasan Polat Stadium", "Istanbul, TR", 40.9205, 29.1313, 2022),
           "Ravens", tribble(~Team, ~Season,
                             "Munich Ravens", 2023:present),
                     tribble(~Conference, ~Season,
-                            "Expansion", 2023:present),
+                            "Central", 2023:present),
                     tribble(~Division, ~Season,
                             NA, NA),
                     tribble(~Stadium, ~Location, ~Lat, ~Long, ~Season,
-                            NA, "Munich, DE", 48.1375, 11.575, 2023:present),
+                            "tbd", "Munich, DE", 48.1375, 11.575, 2023:present),
           "Seamen", tribble(~Team, ~Season,
                             "Milano Seamen", 2023:present),
                     tribble(~Conference, ~Season,
-                            "Expansion", 2023:present),
+                            "Central", 2023:present),
                     tribble(~Division, ~Season,
                             NA, NA),
                     tribble(~Stadium, ~Location, ~Lat, ~Long, ~Season,
@@ -126,7 +132,8 @@ teamdata_elf <- tribble(~Franchise, ~Team, ~Conference, ~Division, ~HomeField,
       "Sea Devils", tribble(~Team, ~Season,
                             "Hamburg Sea Devils", 2021:present),
                     tribble(~Conference, ~Season,
-                            "Northern", 2022:present),
+                            "Northern", 2022,
+                            "Western", 2023:present),
                     tribble(~Division, ~Season,
                             "North", 2021),
                     tribble(~Stadium, ~Location, ~Lat, ~Long, ~Season,
@@ -142,7 +149,8 @@ teamdata_elf <- tribble(~Franchise, ~Team, ~Conference, ~Division, ~HomeField,
          "Thunder", tribble(~Team, ~Season,
                             "Berlin Thunder", 2021:present),
                     tribble(~Conference, ~Season,
-                            "Northern", 2022:present),
+                            "Northern", 2022,
+                            "Eastern", 2023:present),
                     tribble(~Division, ~Season,
                             "North", 2021),
                     tribble(~Stadium, ~Location, ~Lat, ~Long, ~Season,
@@ -151,27 +159,42 @@ teamdata_elf <- tribble(~Franchise, ~Team, ~Conference, ~Division, ~HomeField,
          "Vikings", tribble(~Team, ~Season,
                             "Vienna Vikings", 2022:present),
                     tribble(~Conference, ~Season,
-                            "Central", 2022:present),
+                            "Central", 2022,
+                            "Eastern", 2023:present),
                     tribble(~Division, ~Season,
                             NA, NA),
                     tribble(~Stadium, ~Location, ~Lat, ~Long, ~Season,
                             "Generali Arena", "Vienna, AT", 48.162345, 16.387156, 2022,
-                            "tbd", "Vienna, AT" ,NA, NA, 2023:present)
+                            "tbd", "Vienna, AT" ,48.17283953627955, 16.426366954450117, 2023:present)
                     )
 
 # TRANSFORM ----
 ## Team_info ----
 teaminfo_elf <- 
-  teamdata_elf %>% select(Franchise, Team) %>% unnest(Team) %>% unnest(Season) %>% left_join(
-    teamdata_elf %>% select(Franchise, Conference) %>% unnest(Conference) %>% unnest(Season) , by = c("Franchise", "Season")) %>% left_join(
-      teamdata_elf %>% select(Franchise, Division) %>% unnest(Division) %>% unnest(Season), by = c("Franchise", "Season")) %>% 
-  relocate(c(Franchise, Season, Team, Division)) %>% 
+  left_join(
+    teamdata_elf |> select(Franchise, Team) |> 
+      mutate(Team = map(Team, ~unnest_longer(., "Season"))) |>
+      unnest_longer(Team) |> unpack(Team),
+    teamdata_elf |> select(Franchise, Conference) |>
+      mutate(Conference = map(Conference, ~unnest_longer(., "Season"))) |>
+      unnest_longer(Conference) |> unpack(Conference),
+    by = c("Franchise", "Season")) |> 
+  left_join(
+    teamdata_elf |> select(Franchise, Division) |>
+      mutate(Division = map(Division, ~unnest_longer(., "Season"))) |>
+      unnest_longer(Division) |> unpack(Division),
+    by = c("Franchise", "Season")) |> 
+  relocate(c(Franchise, Season, Team, Division)) |> 
   arrange(Franchise, Season)
 
 ## Team_location ----
 teamloc_elf <- 
-  teamdata_elf %>% select(Franchise, HomeField) %>% unnest(HomeField) %>% unnest(Season) %>% left_join(
-    teaminfo_elf %>% select(Season, Franchise, Conference, Division), by = c("Franchise", "Season"))
+  teamdata_elf |> select(Franchise, HomeField) |> 
+  mutate(HomeField = map(HomeField, ~unnest_longer(., "Season"))) |>
+  unnest_longer(HomeField) |> unpack(HomeField) |> # unpack to '$'-notation (i.e. HomeField$Stadium, etc.)
+  left_join(
+    teaminfo_elf |> select(Season, Franchise, Conference, Division), by = c("Franchise", "Season")
+    )
 
 # CLEAN UP ----
 rm(present, teamdata_elf)
