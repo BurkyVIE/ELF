@@ -171,10 +171,10 @@ teamdata_elf <- tribble(~Franchise, ~Team, ~Conference, ~Division, ~HomeField,
 # TRANSFORM ----
 ## Team_info ----
 teaminfo_elf <- 
-  left_join(
     teamdata_elf |> select(Franchise, Team) |> 
       mutate(Team = map(Team, ~unnest_longer(., "Season"))) |>
-      unnest_longer(Team) |> unpack(Team),
+      unnest_longer(Team) |> unpack(Team) |> 
+  left_join(
     teamdata_elf |> select(Franchise, Conference) |>
       mutate(Conference = map(Conference, ~unnest_longer(., "Season"))) |>
       unnest_longer(Conference) |> unpack(Conference),
