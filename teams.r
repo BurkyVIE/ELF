@@ -169,33 +169,26 @@ teamdata_elf <- tribble(~Franchise, ~Team, ~Conference, ~Division, ~HomeField,
                     )
 
 # TRANSFORM ----
+## Teamdata ----
+teamdata_elf <- teamdata_elf |>
+  mutate(across(Team:HomeField, ~ map(.x, ~ unnest_longer(., "Season")))) # expandiere Seasons in nested tibbles
+
 ## Team_info ----
-teaminfo_elf <- 
-    teamdata_elf |> select(Franchise, Team) |>                 # expandiere TEAM Info
-      mutate(Team = map(Team, ~unnest_longer(., "Season"))) |> # expandiere zuerst innerhalb des nested tibble
-      unnest_longer(Team) |> unpack(Team) |>                   # unnest und einfache Namen (unpack)
+teaminfo_elf <-
+  select(teamdata_elf, Franchise, Team) |> unnest_longer(Team) |> unpack(Team) |>                   # extrahiere TEAM Info
   left_join(
-    teamdata_elf |> select(Franchise, Conference) |>                       # expandiere CONFERENCE Info
-      mutate(Conference = map(Conference, ~unnest_longer(., "Season"))) |> # expandiere zuerst innerhalb des nested tibble
-      unnest_longer(Conference) |> unpack(Conference),                     # unnest und einfache Namen (unpack)
-    by = c("Franchise", "Season")) |> 
+    select(teamdata_elf, Franchise, Conference) |> unnest_longer(Conference) |> unpack(Conference), # extrahiere CONFERENCE Info
+    by = c("Franchise", "Season")) |>
   left_join(
-    teamdata_elf |> select(Franchise, Division) |>                     # expandiere DIVISION Info
-      mutate(Division = map(Division, ~unnest_longer(., "Season"))) |> # expandiere zuerst innerhalb des nested tibble
-      unnest_longer(Division) |> unpack(Division),                     # unnest und einfache Namen (unpack)
-    by = c("Franchise", "Season")) |> 
-  relocate(c(Franchise, Season, Team, Division)) |> 
-  arrange(Franchise, Season)
+    select(teamdata_elf, Franchise, Division) |> unnest_longer(Division) |> unpack(Division),       # extrahiere DIVISION Info
+    by = c("Franchise", "Season"))  
 
 ## Team_location ----
 teamloc_elf <- 
-  teamdata_elf |> select(Franchise, HomeField) |> 
-  mutate(HomeField = map(HomeField, ~unnest_longer(., "Season"))) |>
-  unnest_longer(HomeField) |> unpack(HomeField) |> # unpack to '$'-notation (i.e. HomeField$Stadium, etc.)
+  select(teamdata_elf, Franchise, HomeField) |> unnest_longer(HomeField) |> unpack(HomeField) |> # extrahiere HOMEFIELD Info
   left_join(
     teaminfo_elf |> select(Season, Franchise, Conference, Division),
-    by = c("Franchise", "Season")) |> 
-  relocate(Season, .after = Franchise)
+    by = c("Franchise", "Season"))
 
 # CLEAN UP ----
 rm(present, teamdata_elf)
