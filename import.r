@@ -31,7 +31,7 @@ rm(import)
 # results ----
 raw <- data_raw %>% 
   select(-file) %>% 
-  unnest(cols = Data)
+  unnest(col = Data)
 
 results <- bind_rows(
   raw %>% rename(Team = Guest, Opponent = Home, PF = Pts_G, PA = Pts_H) %>% add_column(Home = FALSE),
@@ -44,9 +44,11 @@ results <- bind_rows(
   relocate(Home, .after = "Team") %>% 
   arrange(Kickoff) |>
   left_join(teaminfo_elf, by = c("Team", "Season")) |>
-  nest(Teamdata = Franchise:Conference) |> 
+  nest(Teamdata = Franchise:Division) |> 
   left_join(teaminfo_elf, by = c("Opponent" = "Team", "Season")) |> 
-  nest(Oppdata = Franchise:Conference)
+  nest(Oppdata = Franchise:Division) |> 
+  rowwise() |> mutate(GameID = case_when(Home ~ paste0(Teamdata["Abb"], Oppdata["Abb"], sprintf("%02d", Week), Season%%100),
+                            TRUE ~ paste0(Oppdata["Abb"], Teamdata["Abb"], sprintf("%02d", Week), Season%%100)))
 
 rm(raw)
 
