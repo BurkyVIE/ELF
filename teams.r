@@ -165,7 +165,7 @@ teamdata_elf <- tribble(~Franchise, ~Team, ~Conference, ~Division, ~HomeField,
                             NA, NA),
                     tribble(~Stadium, ~Location, ~Lat, ~Long, ~Season,
                             "Generali Arena", "Vienna, AT", 48.162345, 16.387156, 2022,
-                            "tbd", "Vienna, AT" ,48.17283953627955, 16.426366954450117, 2023:present)
+                            "tbd", "Vienna, AT" , 48.17283953627955, 16.426366954450117, 2023:present)
                     )
 
 # TRANSFORM ----
@@ -189,6 +189,23 @@ teamloc_elf <-
   left_join(
     teaminfo_elf |> select(Season, Franchise, Conference, Division),
     by = c("Franchise", "Season"))
+
+# DIVISION/CONFERENCE COLORS ----
+## Colors ----
+colors_elf <- list(
+  Division = tribble(~Name, ~Color, ~Season,
+                     "North", "#1f3f77", 2021,
+                     "South", "#cd2028", 2021),
+  Conference = tribble(~Name, ~Color, ~Season,
+                       "Central", "#008000", 2022:present,
+                       "Eastern", "#cd2028", 2023,
+                       "Northern", "#1f3f77", 2022,
+                       "Southern", "#cd2028", 2022,
+                       "Western", "#1f3f77", 2023)
+)
+
+## Expandiere ----  
+colors_elf <- lapply(colors_elf, unnest_longer, "Season")
 
 # CLEAN UP ----
 rm(present, teamdata_elf)

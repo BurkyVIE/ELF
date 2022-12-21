@@ -25,7 +25,8 @@ p <- ggplot() +
                    box.padding = unit(.6, "lines"), point.padding = unit(.4, "lines"), force_pull = .5,
                    label.r = unit(0.5, "lines"), label.size = NA, fontface = "bold", show.legend = TRUE) +
   ggimage::geom_image(data, mapping = aes(x = Long, y = Lat), image = "fb_32.png", size = .02) +
-  scale_fill_manual(name = "Conference", values = c(Western = "#1f3f77", Central = "#008000", Eastern = "#cd2028"), na.value = "#a39819") +
+  # scale_fill_manual(name = "Conference", values = c(Western = "#1f3f77", Central = "#008000", Eastern = "#cd2028"), na.value = "#a39819") +
+  scale_fill_manual(name = "Conference", values = colors_elf$Conference |> filter(Season == seas) |> select(Name, Color) |> deframe(), na.value = "#a39819") +
   scale_x_continuous(name = "Longitude", expand = expansion(mult = .05), labels = (\(x) paste0(x, "°", ifelse(x < 0, "W", "E")))) + # solves problems with incorrect interpretation of 'degrees'
   scale_y_continuous(name = "Latitude", expand = expansion(mult = .05), labels = (\(y) paste0(y, "°", ifelse(y < 0, "S", "N")))) +
   coord_sf(bbo[1,], bbo[2,], expand = TRUE) +
