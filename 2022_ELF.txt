@@ -25,7 +25,7 @@ Week,Kickoff,Guest,Home,Pts_G,Pts_H
 4,2022-06-25 15:00 CET,Barcelona Dragons,Rhein Fire,17,13
 5,2022-07-02 18:00 CET,Istanbul Rams,Barcelona Dragons,7,41
 5,2022-07-02 15:00 CET,Berlin Thunder,Cologne Centurions,34,7
-5,2022-07-03 15:00 CET,Rhein Fire,Hamburg Sea Devils,15,42
+5,2022-07-03 15:00 CET,Rhein Fire,Hamburg Sea Devils,16,42
 5,2022-07-03 15:00 CET,Panthers Wroclaw,Vienna Vikings,6,30
 5,2022-07-03 15:00 CET,Stuttgart Surge,Leipzig Kings,22,28
 5,2022-07-03 15:00 CET,Frankfurt Galaxy,Raiders Tirol,17,23

@@ -89,14 +89,6 @@ teamdata_elf <- tribble(~Franchise, ~Team, ~Conference, ~Division, ~HomeField,
                             "North", 2021),
                     tribble(~Stadium, ~Location, ~Lat, ~Long, ~Season,
                             "Stadion Olimpijski", "Wroclaw, PL", 51.119444, 17.096667, 2021:present),
-        "Paris FT", tribble(~Team, ~Abb, ~Season,
-                            "Paris Football Team", "??", 2023:present),
-                    tribble(~Conference, ~Season,
-                            "Western", 2023:present),
-                    tribble(~Division, ~Season,
-                            NA, NA),
-                    tribble(~Stadium, ~Location, ~Lat, ~Long, ~Season,
-                            "tbd", "Paris, FR", 48.856613, 2.352222, 2023:present),
          "Raiders", tribble(~Team, ~Abb, ~Season,
                             "Raiders Tirol", "RT", 2022:present),
                     tribble(~Conference, ~Season,
@@ -121,6 +113,14 @@ teamdata_elf <- tribble(~Franchise, ~Team, ~Conference, ~Division, ~HomeField,
                             NA, NA),
                     tribble(~Stadium, ~Location, ~Lat, ~Long, ~Season,
                             "tbd", "Munich, DE", 48.1375, 11.575, 2023:present),
+          "Saints", tribble(~Team, ~Abb, ~Season,
+                            "Paris Saints", "PS", 2023:present),
+                    tribble(~Conference, ~Season,
+                            "Western", 2023:present),
+                    tribble(~Division, ~Season,
+                            NA, NA),
+                    tribble(~Stadium, ~Location, ~Lat, ~Long, ~Season,
+                            "Stade Jean-Bouin", "Paris, FR", 48.843056, 2.252778, 2023:present),
           "Seamen", tribble(~Team, ~Abb, ~Season,
                             "Milano Seamen", "MS", 2023:present),
                     tribble(~Conference, ~Season,
@@ -130,7 +130,7 @@ teamdata_elf <- tribble(~Franchise, ~Team, ~Conference, ~Division, ~HomeField,
                     tribble(~Stadium, ~Location, ~Lat, ~Long, ~Season,
                             "Velodromo Vigorelli", "Milan, IT", 45.481389, 9.158056, 2023:present),
       "Sea Devils", tribble(~Team, ~Abb, ~Season,
-                            "Hamburg Sea Devils", "HS", 2021:present),
+                            "Hamburg Sea Devils", "HD", 2021:present),
                     tribble(~Conference, ~Season,
                             "Northern", 2022,
                             "Western", 2023:present),
@@ -206,6 +206,9 @@ colors_elf <- list(
 
 ## Expandiere ----  
 colors_elf <- lapply(colors_elf, unnest_longer, "Season")
+
+# RESPONSE ----
+cat("..ELF > Team data imported ✔\n")
 
 # CLEAN UP ----
 rm(present, teamdata_elf)
