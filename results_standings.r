@@ -9,7 +9,7 @@ source("import.r")
 ## results ----
 raw <- data_raw %>% 
   select(-file) %>% 
-  unnest(col = Data)
+  unnest_longer(Data) |> unpack(Data)
 
 results <- bind_rows(
   raw %>% rename(Team = Guest, Opponent = Home, PF = Pts_G, PA = Pts_H) %>% add_column(Home = FALSE),
