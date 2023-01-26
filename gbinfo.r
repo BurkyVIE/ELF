@@ -1,28 +1,25 @@
 # LIBRARIES ----
 library(tidyverse)
 
+# GLOBAL
+# Liste der Umbennennungen für die Nachsaison
+week_renamer <- c("21PO" = "2198", "21FI" = "2199",
+                  "22PO" = "2298", "22FI" = "2299")
+
 # SOURCEN ----
 source("results_standings.r")
 
-# GLOBALS ----
-LoGB <- enframe(dir("GB/"), name = NULL, value = "file") |>
-  mutate(GameID = str_sub(file, 1, 8),
-         GameID = str_replace_all(GameID, # Liste der Umbennennungen für die Nachsaison
-                                  c("21PO" = "2198", "21FI" = "2199",
-                                    "22PO" = "2298", "22FI" = "2299")))
-
 # FUNCTIONS ----
 ## scrape ganze Seite ----
-scr_pag <- function(file, p = 1) {
-  txt <- pdftools::pdf_text(paste0("GB/", file))
-  pag <- unlist((txt)[[p]] |> strsplit("\n"))
-  return(pag)
+scr_gb <- function(file) {
+  txt <- pdftools::pdf_text(file)
+  pag <- (txt) |> strsplit("\n")
+  return(list(pag[[1]][8], pag[[1]][11:13], pag[[2]][21]))
 }
 
 ## scrape score by quarter ----
 scr_sbq <- function(df) {
-  tab <- df[11:13] |> # Zeilen 11 bis 13
-    strsplit(" {2,}") |>
+  tab <- strsplit(df, " {2,}") |>
     unlist() |>
     matrix(nrow = 3, byrow = T) |>
     data.frame() |> 
@@ -33,32 +30,41 @@ scr_sbq <- function(df) {
   return(tab)
 }
 
-
 # DATA ----
-gb_info <- data_raw |>                                                                                         # Spielinformationen
-  unnest_longer(Data) |>
-  unpack(Data) |> 
-  select(Season, Week, Guest, Home) |> 
-  left_join(teaminfo_elf |> select(Season, Team, "G" = Abb), by = c("Season" = "Season", "Guest" = "Team")) |> # Abkürzung Guest
-  left_join(teaminfo_elf |> select(Season, Team, "H" = Abb), by = c("Season" = "Season", "Home" = "Team")) |>  # Abkürzung Home
-  mutate(GameID = paste0(H, G, Season%%100, sprintf("%02d", Week))) |>                                         # GameID
-  left_join(LoGB, by = "GameID") |>                                                                            # Filename Gamebook
-  mutate(Page1 = map(file, ~scr_pag(., 1)),
-         Page2 = map(file, ~scr_pag(., 2)))
+# Infos aus Gamebooks
+GB_info <- enframe(list.files("GB/", full.names = TRUE), name = NULL, value = "File") |>
+  filter(str_ends(File, ".pdf")) |>
+  mutate(GameID = str_sub(File, 4, 11),
+         GameID = str_replace_all(GameID, week_renamer),
+         GB_Data = map(File, ~scr_gb(.)))
 
-## Infos Seite 1 + 2 ----
-gb_info <- gb_info |>
-  mutate(Scores_Quarter = map(Page1, ~scr_sbq(.)),
+rm(week_renamer)
+
+# gb_info <- data_raw |>                                                                                         # Spielinformationen
+#   unnest_longer(Data) |>
+#   unpack(Data) |> 
+#   select(Season, Week, Guest, Home) |> 
+#   left_join(teaminfo_elf |> select(Season, Team, "G" = Abb), by = c("Season" = "Season", "Guest" = "Team")) |> # Abkürzung Guest
+#   left_join(teaminfo_elf |> select(Season, Team, "H" = Abb), by = c("Season" = "Season", "Home" = "Team")) |>  # Abkürzung Home
+#   mutate(GameID = paste0(H, G, Season%%100, sprintf("%02d", Week))) |>                                         # GameID
+#   left_join(LoGB, by = "GameID") |>                                                                            # Filename Gamebook
+# gb_info <- LoGB |> 
+#   mutate(Page1 = map(File, ~scr_pag(., 1)),
+#          Page2 = map(File, ~scr_pag(., 2)))
+
+## Infos umwandel ----
+GB_info <- GB_info |>
+  mutate(Scores_Quarter = map(GB_Data, ~scr_sbq(.[[2]])),
          OT = map_lgl(Scores_Quarter, ~(dim(.)[2] > 6)),
          map_df(Scores_Quarter, ~.$Total |> set_names(c("Pts_G", "Pts_H"))),
-         Att = map_int(Page1, ~str_replace(.[8], "Attendance:", "") |> as.integer()),
-         map_df(Page2, ~strsplit(.[21], " {2,}") |> unlist() |> tail(2) |> as.integer() |> set_names(c("Yds_G", "Yds_H"))))
+         Att = map_int(GB_Data, ~str_replace(.[[1]], "Attendance:", "") |> as.integer()),
+         map_df(GB_Data, ~strsplit(.[[3]], " {2,}") |> unlist() |> tail(2) |> as.integer() |> set_names(c("Yds_G", "Yds_H"))))
 
 # RESPONSE ----
 cat("..ELF > Gamebook information generated ✔\n")
 
 ## Zusatzinfos für results ----
-transf <- gb_info |> 
+transf <- GB_info |> 
   select(GameID, OT, Pts_G, Yds_G, Pts_H, Yds_H, Att) |> 
   mutate(Home = TRUE)
 transf <- bind_rows(
@@ -81,4 +87,4 @@ if(dim(test_wrong)[1] == 0) {
 }
 
 # CLEAN UP ----
-rm(LoGB, scr_pag, scr_sbq, transf, test, test_wrong)
+rm(scr_gb, scr_sbq, transf, test, test_wrong)

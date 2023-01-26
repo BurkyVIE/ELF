@@ -25,8 +25,10 @@ results <- bind_rows(
   nest(Teamdata = Franchise:Division) |> 
   left_join(teaminfo_elf, by = c("Opponent" = "Team", "Season")) |> 
   nest(Oppdata = Franchise:Division) |> 
-  rowwise() |> mutate(GameID = case_when(Home ~ paste0(Teamdata["Abb"], Oppdata["Abb"], Season%%100, sprintf("%02d", Week)),
-                            TRUE ~ paste0(Oppdata["Abb"], Teamdata["Abb"], Season%%100, sprintf("%02d", Week))))
+  rowwise() |>
+  mutate(GameID = case_when(Home ~ paste0(Teamdata["Abb"], Oppdata["Abb"], Season%%100, sprintf("%02d", Week)), # rowwise wg Season und Week
+                            TRUE ~ paste0(Oppdata["Abb"], Teamdata["Abb"], Season%%100, sprintf("%02d", Week)))) |> 
+  ungroup()
 
 rm(raw)
 
