@@ -40,18 +40,6 @@ GB_info <- enframe(list.files("GB/", full.names = TRUE), name = NULL, value = "F
 
 rm(week_renamer)
 
-# gb_info <- data_raw |>                                                                                         # Spielinformationen
-#   unnest_longer(Data) |>
-#   unpack(Data) |> 
-#   select(Season, Week, Guest, Home) |> 
-#   left_join(teaminfo_elf |> select(Season, Team, "G" = Abb), by = c("Season" = "Season", "Guest" = "Team")) |> # Abkürzung Guest
-#   left_join(teaminfo_elf |> select(Season, Team, "H" = Abb), by = c("Season" = "Season", "Home" = "Team")) |>  # Abkürzung Home
-#   mutate(GameID = paste0(H, G, Season%%100, sprintf("%02d", Week))) |>                                         # GameID
-#   left_join(LoGB, by = "GameID") |>                                                                            # Filename Gamebook
-# gb_info <- LoGB |> 
-#   mutate(Page1 = map(File, ~scr_pag(., 1)),
-#          Page2 = map(File, ~scr_pag(., 2)))
-
 ## Infos umwandel ----
 GB_info <- GB_info |>
   mutate(Scores_Quarter = map(GB_Data, ~scr_sbq(.[[2]])),
