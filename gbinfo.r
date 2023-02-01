@@ -11,9 +11,15 @@ source("results_standings.r")
 
 # FUNCTIONS ----
 ## scrape ganze Seite ----
+# scr_gb <- function(file) {
+#   txt <- pdftools::pdf_text(file)
+#   pag <- (txt) |> strsplit("\n")
+#   return(list(pag[[1]][8], pag[[1]][11:13], pag[[2]][21]))
+# }
 scr_gb <- function(file) {
-  txt <- pdftools::pdf_text(file)
-  pag <- (txt) |> strsplit("\n")
+  txt <- readLines(file)
+  pag <- split(txt, cumsum(txt == "--- pagebreak ---")) |> 
+    lapply(function(x)x[x != "--- pagebreak ---"]) # entferen Seitenumbrüche (notwendig im langen Textfile)
   return(list(pag[[1]][8], pag[[1]][11:13], pag[[2]][21]))
 }
 
@@ -33,7 +39,8 @@ scr_sbq <- function(df) {
 # DATA ----
 # Infos aus Gamebooks
 GB_info <- enframe(list.files("GB/", full.names = TRUE), name = NULL, value = "File") |>
-  filter(str_ends(File, ".pdf")) |>
+  # filter(str_ends(File, ".pdf")) |>
+  filter(str_ends(File, ".txt")) |>
   mutate(GameID = str_sub(File, 4, 11),
          GameID = str_replace_all(GameID, week_renamer),
          GB_Data = map(File, ~scr_gb(.)))
