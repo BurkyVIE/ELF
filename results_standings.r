@@ -28,7 +28,8 @@ results <- bind_rows(
   rowwise() |>
   mutate(GameID = case_when(Home ~ paste0(Teamdata["Abb"], Oppdata["Abb"], Season%%100, sprintf("%02d", Week)), # rowwise wg Season und Week
                             TRUE ~ paste0(Oppdata["Abb"], Teamdata["Abb"], Season%%100, sprintf("%02d", Week)))) |> 
-  ungroup()
+  ungroup() |> 
+  filter(!is.na(PF))
 
 rm(raw)
 
