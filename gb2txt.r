@@ -10,10 +10,12 @@ gb2txt <- function(file) {
     txt[[1]] = NULL
     }
   writeLines(collect, paste0(str_sub(file, 1, 11), ".txt"))
+  cat(".")
+  invisible()
 }
 
 sapply(enframe(list.files("GB/", full.names = TRUE), name = NULL, value = "File") |>
-        filter(str_ends(File, ".pdf")) |> 
+        filter(str_ends(tolower(File), ".pdf")) |> 
         pull(File),
       gb2txt)
 
