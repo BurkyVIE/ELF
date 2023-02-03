@@ -54,7 +54,10 @@ GB_info <- GB_info |>
          map_df(Scores_Quarter, ~.$Total |> set_names(c("Pts_G", "Pts_H"))),
          Att = map_int(GB_Data, ~str_replace(.[[1]], "Attendance:", "") |> as.integer()),
          map_df(GB_Data, ~strsplit(.[[3]], " {2,}") |> unlist() |> tail(2) |> as.integer() |> set_names(c("Yds_G", "Yds_H"))),
-         Game = map_chr(GB_Data, ~str_trim(str_replace_all(.[[4]], "#\\d ", ""))))
+         Game = map_chr(GB_Data, ~str_trim(str_replace_all(.[[4]], "#\\d ", "")))) |>
+  separate(Game, sep = "( vs )|( \\()|( at )|(\\))", into = c("Guest", "Home", "Date", "Loc"), extra = "drop") |>
+  mutate(Date = lubridate::mdy(Date)) |> 
+  arrange(Date)
 
 # RESPONSE ----
 cat("..ELF > Gamebook information generated ✔\n")
