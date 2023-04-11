@@ -166,7 +166,7 @@ teamdata_elf <- tribble(~Franchise, ~Team, ~Conference, ~Division, ~HomeField,
                             NA, NA),
                     tribble(~Stadium, ~Location, ~Lat, ~Long, ~Season,
                             "Generali Arena", "Vienna, AT", 48.162345, 16.387156, 2022,
-                            "tbd", "Vienna, AT" , 48.17283953627955, 16.426366954450117, 2023:present)
+                            "Naturarena Hohe Warte", "Vienna, AT" , 48.248898, 16.359694, 2023:present)
                     )
 
 # TRANSFORM ----
