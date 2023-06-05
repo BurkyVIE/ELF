@@ -1,11 +1,11 @@
 Week,Kickoff,Guest,Home,Pts_G,Pts_H
 1,2023-06-03 17:00 CET,Berlin Thunder,Fehervar Enthroners,36,3
-1,2023-06-03 17:00 CET,Paris Musketeers,Cologne Centurions,24,17
 1,2023-06-03 17:00 CET,Hamburg Sea Devils,Panthers Wroclaw,25,34
+1,2023-06-03 17:00 CET,Paris Musketeers,Cologne Centurions,24,17
 1,2023-06-03 19:00 CET,Helvetic Guards,Barcelona Dragons,17,29
 1,2023-06-04 13:00 CET,Raiders Tirol,Munich Ravens,59,38
-1,2023-06-04 16:25 CET,Leipzig Kings,Prague Lions,,
-1,2023-06-04 16:25 CET,Frankfurt Galaxy,Rhein Fire,,
+1,2023-06-04 16:25 CET,Frankfurt Galaxy,Rhein Fire,9,33
+1,2023-06-04 16:25 CET,Leipzig Kings,Prague Lions,18,15
 2,2023-06-10 17:00 CET,Cologne Centurions,Prague Lions,,
 2,2023-06-10 17:00 CET,Frankfurt Galaxy,Fehervar Enthroners,,
 2,2023-06-10 17:00 CET,Stuttgart Surge,Paris Musketeers,,
