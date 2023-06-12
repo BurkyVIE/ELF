@@ -28,7 +28,7 @@ rm(p)
 ### Latest Scorigamis
 results %>% filter(Result == "W" | (Result == "T" & Home)) %>%
   #filter(Season >= 2000) %>% 
-  mutate(Score = paste(PF, PA, sep = "-"),
+  mutate(Score = paste(str_pad(PF, 2, pad = "0"), str_pad(PA, 2, pad = "0"), sep = "-"),
          One = 1) %>% 
   group_by(Score) %>% 
   mutate(Counter = cumsum(One)) %>% #summarise(Count = max(Counter)) %>% ungroup() %>% arrange(desc(Count))

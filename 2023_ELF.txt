@@ -6,14 +6,14 @@ Week,Kickoff,Guest,Home,Pts_G,Pts_H
 1,2023-06-04 13:00 CET,Raiders Tirol,Munich Ravens,59,38
 1,2023-06-04 16:25 CET,Frankfurt Galaxy,Rhein Fire,9,33
 1,2023-06-04 16:25 CET,Leipzig Kings,Prague Lions,18,15
-2,2023-06-10 17:00 CET,Cologne Centurions,Prague Lions,,
-2,2023-06-10 17:00 CET,Frankfurt Galaxy,Fehervar Enthroners,,
-2,2023-06-10 17:00 CET,Stuttgart Surge,Paris Musketeers,,
-2,2023-06-10 19:00 CET,Barcelona Dragons,Milano Seamen,,
-2,2023-06-11 13:00 CET,Vienna Vikings,Berlin Thunder,,
-2,2023-06-11 16:25 CET,Panthers Wroclaw,Leipzig Kings,,
-2,2023-06-11 16:25 CET,Raiders Tirol,Helvetic Guards,,
-2,2023-06-11 16:25 CET,Rhein Fire,Hamburg Sea Devils,,
+2,2023-06-10 17:00 CET,Cologne Centurions,Prague Lions,23,14
+2,2023-06-10 17:00 CET,Frankfurt Galaxy,Fehervar Enthroners,48,13
+2,2023-06-10 17:00 CET,Stuttgart Surge,Paris Musketeers,29,20
+2,2023-06-10 19:00 CET,Barcelona Dragons,Milano Seamen,41,33
+2,2023-06-11 13:00 CET,Vienna Vikings,Berlin Thunder,27,24
+2,2023-06-11 16:25 CET,Panthers Wroclaw,Leipzig Kings,31,6
+2,2023-06-11 16:25 CET,Raiders Tirol,Helvetic Guards,22,7
+2,2023-06-11 16:25 CET,Rhein Fire,Hamburg Sea Devils,27,22
 3,2023-06-17 17:00 CET,Hamburg Sea Devils,Cologne Centurions,,
 3,2023-06-17 18:00 CET,Prague Lions,Vienna Vikings,,
 3,2023-06-17 18:00 CET,Barcelona Dragons,Raiders Tirol,,
