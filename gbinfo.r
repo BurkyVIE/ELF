@@ -61,9 +61,9 @@ GB_info <- GB_info |>
          map_df(GB_Data, ~strsplit(.[[3]], " {2,}") |> unlist() |> tail(2) |> as.integer() |> set_names(c("Yds_G", "Yds_H"))),
          Game = map_chr(GB_Data, ~str_trim(str_replace_all(.[[4]], "#\\d ", "")))) |>
   separate(Game, sep = "( vs )|( \\()|( at )|(\\))", into = c("Guest", "Home", "Date", "Loc"), extra = "drop") |>
-  mutate(Date = lubridate::mdy(Date)) |>
-  mutate(across(Kickoff:End, ~lubridate::ymd_hm(paste(Date, .)))) |> 
-  mutate(Duration = lubridate::hm(Duration)) |> 
+  mutate(Date = lubridate::mdy(Date),
+         across(Kickoff:End, ~lubridate::ymd_hm(paste(Date, .), quiet = TRUE)),
+         Duration = lubridate::hm(Duration, quiet = TRUE)) |> 
   arrange(Date)
 
 # RESPONSE ----
@@ -71,11 +71,11 @@ cat("..ELF > Gamebook information generated ✔\n")
 
 ## Zusatzinfos für results ----
 transf <- GB_info |> 
-  select(GameID, OT, Pts_G, Yds_G, Pts_H, Yds_H, Att) |> 
+  select(GameID, OT, Pts_G, Yds_G, Pts_H, Yds_H, Att, Duration) |> 
   mutate(Home = TRUE)
 transf <- bind_rows(
-  transf |> transmute(GameID, Home, OT, PF_gb = Pts_H, Yds_F = Yds_H, PA_gb = Pts_G, Yds_A = Yds_G, Att),
-  transf |> transmute(GameID, Home = !Home, OT, PF_gb = Pts_G, Yds_F = Yds_G, PA_gb = Pts_H, Yds_A = Yds_H, Att)
+  transf |> transmute(GameID, Home, OT, PF_gb = Pts_H, Yds_F = Yds_H, PA_gb = Pts_G, Yds_A = Yds_G, Att, Duration),
+  transf |> transmute(GameID, Home = !Home, OT, PF_gb = Pts_G, Yds_F = Yds_G, PA_gb = Pts_H, Yds_A = Yds_H, Att, Duration)
 )
 
 ## Zusammenhängen ----
