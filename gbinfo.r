@@ -20,7 +20,11 @@ scr_gb <- function(file) {
   txt <- readLines(file)
   pag <- split(txt, cumsum(txt == "--- pagebreak ---")) |> 
     lapply(function(x)x[x != "--- pagebreak ---"]) # entferen Seitenumbrüche (notwendig im langen Textfile)
-  return(list(pag[[1]][8], pag[[1]][11:13], pag[[2]][21], pag[[1]][3]))
+  return(list(pag[[1]][str_starts(pag[[1]], "Attendance.*")],
+              pag[[1]][11:13],
+              pag[[2]][21],
+              pag[[1]][3],
+              pag[[1]][str_detect(pag[[1]], "Kickoff time.*")]))
 }
 
 ## scrape score by quarter ----
@@ -53,6 +57,7 @@ GB_info <- GB_info |>
          OT = map_lgl(Scores_Quarter, ~(dim(.)[2] > 6)),
          map_df(Scores_Quarter, ~.$Total |> set_names(c("Pts_G", "Pts_H"))),
          Att = map_int(GB_Data, ~str_replace(.[[1]], "Attendance:", "") |> as.integer()),
+         map_df(GB_Data, ~c(str_extract_all(.[[5]], "\\d+:\\d{2}") |> unlist(), character(3))[1:3] |> set_names(c("Kickoff", "End", "Time"))),
          map_df(GB_Data, ~strsplit(.[[3]], " {2,}") |> unlist() |> tail(2) |> as.integer() |> set_names(c("Yds_G", "Yds_H"))),
          Game = map_chr(GB_Data, ~str_trim(str_replace_all(.[[4]], "#\\d ", "")))) |>
   separate(Game, sep = "( vs )|( \\()|( at )|(\\))", into = c("Guest", "Home", "Date", "Loc"), extra = "drop") |>
