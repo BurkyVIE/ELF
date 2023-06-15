@@ -57,7 +57,7 @@ GB_info <- GB_info |>
          OT = map_lgl(Scores_Quarter, ~(dim(.)[2] > 6)),
          map_df(Scores_Quarter, ~.$Total |> set_names(c("Pts_G", "Pts_H"))),
          Att = map_int(GB_Data, ~str_extract(.[[3]], "\\d+") |> as.integer()),
-         map_df(GB_Data, ~c(str_extract_all(.[[2]], "\\d+:\\d{2}") |> unlist(), character(3))[1:3] |> set_names(c("Kickoff", "End", "Duration"))),
+         map_df(GB_Data, ~c(str_extract_all(.[[2]], "\\d+[:|.|,| |h|>]\\d{2}") |> unlist(), character(3))[1:3] |> set_names(c("Kickoff", "End", "Duration"))),
          map_df(GB_Data, ~strsplit(.[[4]], " {2,}") |> unlist() |> tail(2) |> as.integer() |> set_names(c("Yds_G", "Yds_H"))),
          Game = map_chr(GB_Data, ~str_replace_all(.[[1]], "#\\d ", ""))) |>
   separate(Game, sep = "( vs )|( \\()|( at )|(\\))", into = c("Guest", "Home", "Date", "Loc"), extra = "drop") |>
