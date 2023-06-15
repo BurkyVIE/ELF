@@ -18,13 +18,13 @@ source("results_standings.r")
 # }
 scr_gb <- function(file) {
   txt <- readLines(file)
-  pag <- split(txt, cumsum(txt == "--- pagebreak ---")) |> 
-    lapply(function(x)x[x != "--- pagebreak ---"]) # entferen Seitenumbrüche (notwendig im langen Textfile)
-  return(list(pag[[1]][str_starts(pag[[1]], "Attendance.*")],
-              pag[[1]][11:13],
-              pag[[2]][21],
-              pag[[1]][3],
-              pag[[1]][str_detect(pag[[1]], "Kickoff time.*")]))
+  return(lapply(list(txt[3],
+                    txt[str_detect(txt, "Kickoff time")],
+                    txt[str_detect(txt, "Attendance")],
+                    txt[str_detect(txt, "TOTAL OFFENSE YARDS")],
+                    txt[which(str_detect(txt, "Score by Quarters")) + 0:2]
+                    ),
+         str_trim))
 }
 
 ## scrape score by quarter ----
@@ -53,13 +53,13 @@ rm(week_renamer)
 
 ## Infos umwandel ----
 GB_info <- GB_info |>
-  mutate(Scores_Quarter = map(GB_Data, ~scr_sbq(.[[2]])),
+  mutate(Scores_Quarter = map(GB_Data, ~scr_sbq(.[[5]])),
          OT = map_lgl(Scores_Quarter, ~(dim(.)[2] > 6)),
          map_df(Scores_Quarter, ~.$Total |> set_names(c("Pts_G", "Pts_H"))),
-         Att = map_int(GB_Data, ~str_replace(.[[1]], "Attendance:", "") |> as.integer()),
-         map_df(GB_Data, ~c(str_extract_all(.[[5]], "\\d+:\\d{2}") |> unlist(), character(3))[1:3] |> set_names(c("Kickoff", "End", "Duration"))),
-         map_df(GB_Data, ~strsplit(.[[3]], " {2,}") |> unlist() |> tail(2) |> as.integer() |> set_names(c("Yds_G", "Yds_H"))),
-         Game = map_chr(GB_Data, ~str_trim(str_replace_all(.[[4]], "#\\d ", "")))) |>
+         Att = map_int(GB_Data, ~str_extract(.[[3]], "\\d+") |> as.integer()),
+         map_df(GB_Data, ~c(str_extract_all(.[[2]], "\\d+:\\d{2}") |> unlist(), character(3))[1:3] |> set_names(c("Kickoff", "End", "Duration"))),
+         map_df(GB_Data, ~strsplit(.[[4]], " {2,}") |> unlist() |> tail(2) |> as.integer() |> set_names(c("Yds_G", "Yds_H"))),
+         Game = map_chr(GB_Data, ~str_replace_all(.[[1]], "#\\d ", ""))) |>
   separate(Game, sep = "( vs )|( \\()|( at )|(\\))", into = c("Guest", "Home", "Date", "Loc"), extra = "drop") |>
   mutate(Date = lubridate::mdy(Date),
          across(Kickoff:End, ~lubridate::ymd_hm(paste(Date, .), quiet = TRUE)),
