@@ -14,14 +14,14 @@ Week,Kickoff,Guest,Home,Pts_G,Pts_H
 2,2023-06-11 16:25 CET,Panthers Wroclaw,Leipzig Kings,31,6
 2,2023-06-11 16:25 CET,Raiders Tirol,Helvetic Guards,22,7
 2,2023-06-11 16:25 CET,Rhein Fire,Hamburg Sea Devils,27,22
-3,2023-06-17 17:00 CET,Hamburg Sea Devils,Cologne Centurions,,
-3,2023-06-17 18:00 CET,Prague Lions,Vienna Vikings,,
-3,2023-06-17 18:00 CET,Barcelona Dragons,Raiders Tirol,,
-3,2023-06-17 18:00 CET,Fehervar Enthroners,Leipzig Kings,,
-3,2023-06-18 13:00 CET,Milano Seamen,Stuttgart Surge,,
-3,2023-06-18 13:00 CET,Munich Ravens,Helvetic Guards,,
-3,2023-06-18 16:25 CET,Paris Musketeers,Rhein Fire,,
-3,2023-06-18 16:25 CET,Panthers Wroclaw,Berlin Thunder,,
+3,2023-06-17 17:00 CET,Hamburg Sea Devils,Cologne Centurions,34,17
+3,2023-06-17 18:00 CET,Prague Lions,Vienna Vikings,21,69
+3,2023-06-17 18:00 CET,Barcelona Dragons,Raiders Tirol,13,29
+3,2023-06-17 18:00 CET,Fehervar Enthroners,Leipzig Kings,24,47
+3,2023-06-18 13:00 CET,Milano Seamen,Stuttgart Surge,26,40
+3,2023-06-18 13:00 CET,Munich Ravens,Helvetic Guards,39,10
+3,2023-06-18 16:25 CET,Paris Musketeers,Rhein Fire,28,58
+3,2023-06-18 16:25 CET,Panthers Wroclaw,Berlin Thunder,27,36
 4,2023-06-24 17:00 CET,Fehervar Enthroners,Panthers Wroclaw,,
 4,2023-06-24 18:00 CET,Paris Musketeers,Frankfurt Galaxy,,
 4,2023-06-24 18:00 CET,Leipzig Kings,Vienna Vikings,,
