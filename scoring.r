@@ -11,8 +11,8 @@ scoring <- function(GameID = "RTVV2201") {
   a <- which(str_starts(compgb, "Qtr Time")) + 1    # scoring summary from...
   b <- which(str_starts(compgb, "Kickoff time")) -3 # ...to
   
-  compgb[a:b] %>%
-    enframe(value = "Data", name = NULL) %>%
+  tibble(GameID = GameID,
+         Data = compgb[a:b]) %>%
     mutate(Quarter = as.integer(str_sub(Data, 1, 1)),
            Time = (lubridate::hms(paste0("0:",str_sub(Data, 5, 9)))),
            # Score = str_sub(Data, -7, -1)) %>% # no good, may catch last digit from Drive Info: "   0-0" is only six digits
@@ -20,10 +20,9 @@ scoring <- function(GameID = "RTVV2201") {
     fill(Quarter, .direction = "down") %>% 
     separate(Score, sep = "-", into = c("Visitor", "Home"), convert = TRUE) %>% 
     mutate(across(Visitor:Home, ~as.integer(.)),
-           ElapsedTime = as.numeric((lubridate::minutes(15 * (Quarter - 1))) + lubridate::minutes(15) - Time) / 60,
+           Gametime = as.numeric((lubridate::minutes(15 * (Quarter - 1))) + lubridate::minutes(15) - Time) / 60,
            Points = (Home + Visitor) - lag((Home + Visitor), 1, default = 0),
-           Scoredby = str_sub(Data, 11, 12),
-           GameID = GameID) %>% 
+           Scored = str_sub(Data, 11, 12)) %>% 
     return()
 }
 
@@ -32,17 +31,17 @@ scoring <- function(GameID = "RTVV2201") {
 
 ## magle data ----
 GB_info %>%
-  filter(str_detect(GameID, "RF"), str_sub(GameID, 5, 6) == "23", !str_ends(GameID, "PO|FI")) %>% # Vienna Vikings, Season == 2023, keine PO oder FI Spiele
+  filter(str_detect(GameID, "VV"), str_sub(GameID, 5, 6) == "23", !str_ends(GameID, "PO|FI")) %>% # Vienna Vikings, Season == 2023, keine PO oder FI Spiele
   pull(GameID) %>% # get GameIDs
   map_df(~scoring(.)) %>% # get Scoring Summaries
-  mutate(Points = case_when(Scoredby == "RF" ~ Points,
+  mutate(Points = case_when(Scored == "VV" ~ Points,
                             .default = -Points)) %>% 
-  add_row(ElapsedTime = 0, Points = 0) %>% 
-  arrange(ElapsedTime) %>%
-  mutate(CumPoints = cumsum(Points / 4)) %>% # !!! no of games
+  add_row(Gametime = 0, Points = 0) %>% 
+  arrange(Gametime) %>%
+  mutate(CumPoints = cumsum(Points / 4)) %>% # !!! no of games !!!
 ## plot ----  
   ggplot() +
-  aes(x = ElapsedTime, y = CumPoints) +
+  aes(x = Gametime, y = CumPoints) +
   geom_vline(xintercept = (1:3) * 15, color = "grey95", lwd = 4, alpha = .5) +
   geom_step(linewidth = 3, color = "purple4") +
   geom_step(linewidth = 1, color = "purple") +
