@@ -11,11 +11,6 @@ source("results_standings.r")
 
 # FUNCTIONS ----
 ## scrape ganze Seite ----
-# scr_gb <- function(file) {
-#   txt <- pdftools::pdf_text(file)
-#   pag <- (txt) |> strsplit("\n")
-#   return(list(pag[[1]][8], pag[[1]][11:13], pag[[2]][21]))
-# }
 scr_gb <- function(file) {
   txt <- readLines(file)
   return(lapply(list(txt[3],

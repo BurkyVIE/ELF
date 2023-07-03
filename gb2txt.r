@@ -1,4 +1,4 @@
-# Diese Funktion wandelt .pdf im Ordner GB in .txt um (kleiner Dateien)
+# Diese Funktion wandelt .pdf im Ordner GB in .txt um (kleinere Dateien)
 
 library(tidyverse)
 
