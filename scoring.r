@@ -39,7 +39,7 @@ GB_info %>%
                             .default = -Points)) %>% 
   add_row(ElapsedTime = 0, Points = 0) %>% 
   arrange(ElapsedTime) %>%
-  mutate(CumPoints = cumsum(Points / 4)) %>%
+  mutate(CumPoints = cumsum(Points / 4)) %>% # !!! no of games
 ## plot ----  
   ggplot() +
   aes(x = ElapsedTime, y = CumPoints) +
