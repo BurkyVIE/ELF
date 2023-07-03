@@ -1,11 +1,6 @@
 # LIBRARIES ----
 library(tidyverse)
 
-# GLOBAL
-# Liste der Umbennennungen für die Nachsaison
-week_renamer <- c("21PO" = "2198", "21FI" = "2199",
-                  "22PO" = "2298", "22FI" = "2299")
-
 # SOURCEN ----
 source("results_standings.r")
 
@@ -41,10 +36,7 @@ GB_info <- enframe(list.files("GB/", full.names = TRUE), name = NULL, value = "F
   # filter(str_ends(File, ".pdf")) |>
   filter(str_ends(File, ".txt")) |>
   mutate(GameID = str_sub(File, 4, 11),
-         GameID = str_replace_all(GameID, week_renamer),
          GB_Data = map(File, ~scr_gb(.)))
-
-rm(week_renamer)
 
 ## Infos umwandel ----
 GB_info <- GB_info |>
