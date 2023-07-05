@@ -37,7 +37,7 @@ Week,Kickoff,Guest,Home,Pts_G,Pts_H
 5,2023-07-02 14:30 CET,Berlin Thunder,Leipzig Kings,39,14
 5,2023-07-02 16:25 CET,Vienna Vikings,Fehervar Enthroners,41,12
 5,2023-07-02 16:25 CET,Milano Seamen,Raiders Tirol,13,38
-5,2023-07-02 16:25 CET,Prague Lions,Panthers Wroclaw,23,26
+5,2023-07-02 16:25 CET,Prague Lions,Panthers Wroclaw,23,29
 6,2023-07-15 18:00 CET,Prague Lions,Leipzig Kings,,
 6,2023-07-08 19:00 CET,Frankfurt Galaxy,Milano Seamen,,
 6,2023-07-09 13:00 CET,Panthers Wroclaw,Hamburg Sea Devils,,
