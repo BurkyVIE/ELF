@@ -27,6 +27,8 @@ scoring <- function(GameID = "RTVV2201") {
            Scoring = case_when(Points == 2 ~ str_extract(Data, "safety|PAT return"),
                            Points == 3 ~ str_extract(Data, "\\d+ yd field goal"),
                            Points %in% 6:8 ~ str_replace(Data, ".* (\\d+ yd (pass|run|\\w+( \\w+)? return|fumble recovery)).*((kick|pass|rush)( \\w+)?).*", "\\1 + \\4"))) %>% 
+    mutate(Scoring = case_when(nchar(Scoring) > 50 ~ str_extract(Data, "\\d+ yd (pass|run|\\w+( \\w+)? return|fumble recovery)"),
+                               .default = Scoring)) %>% # second evaluation for Data without PT information
     return()
 }
 
