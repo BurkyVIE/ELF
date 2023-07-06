@@ -33,6 +33,35 @@ scoring <- function(GameID = "RTVV2201") {
 }
 
 
+
+# counting scores ----
+
+he <- map_df(GB_info$GameID, ~scoring(.))
+hesub <- filter(he, str_detect(GameID, "23"))
+list('total point' = sum(hesub$Points),
+     'sccoring drives' = dim(hesub)[1],
+     'games' = length(unique(hesub$GameID)), # cave 0-0 will not get caught
+     '2 points' = filter(hesub, Points == 2) %>% 
+       group_by(Res = Scoring) %>% 
+       tally(),
+     'field goals' = filter(hesub, Points == 3) %>% 
+       mutate(Res = "field goal") %>% 
+       group_by(Res) %>% 
+       tally(),
+     'touchdowns' = filter(hesub, Points %in% 6:8) %>%
+       mutate(TD = case_when(str_detect(Scoring, "yd run") ~ "run TD",
+                             str_detect(Scoring, "yd pass") ~ "pass TD",
+                             str_detect(Scoring, "recovery") ~ "recovery TD",
+                             str_detect(Scoring, "return") ~ "return TD"), 
+              PAT = case_when(Points == 6 ~ "w/o PAT",
+                              Points == 7 ~ "+ PAT",
+                              Points == 8 ~ "+ 2pt conv"),
+              Res = paste(TD, PAT)) %>% 
+       group_by(Res) %>% 
+       tally())
+
+
+
 # graph ----
 
 ## magle data ----
