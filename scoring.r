@@ -13,7 +13,9 @@ scoring <- function(GameID = "RTVV2201") {
   
   tibble(GameID = GameID,
          Data = compgb[a:b]) %>%
-    mutate(Quarter = as.integer(str_sub(Data, 1, 1)),
+    mutate(tmp = str_replace(Data, "(1st|2nd|3rd|4th|OT| )\\s+(\\d{2}:\\d{2})\\s(\\w{2}).*", "\\1~\\2~\\3")) %>% 
+    separate(tmp, sep = "~", into = c("Quarter", "Time", "Scored")) %>% 
+    mutate(Quarter = as.integer(case_when(Quarter == "OT" ~ "5", .default = str_sub(Quarter, 1, 1))),
            Time = (lubridate::hms(paste0("0:",str_sub(Data, 5, 9)))),
            # Score = str_sub(Data, -7, -1)) %>% # no good, may catch last digit from Drive Info: "   0-0" is only six digits
            Score = str_extract(Data, "   \\d-\\d|\\d+ - \\d+")) %>% # assumes that there are always three blanks before the Score
@@ -22,7 +24,9 @@ scoring <- function(GameID = "RTVV2201") {
     mutate(across(Visitor:Home, ~as.integer(.)),
            Gametime = as.numeric((lubridate::minutes(15 * (Quarter - 1))) + lubridate::minutes(15) - Time) / 60,
            Points = (Home + Visitor) - lag((Home + Visitor), 1, default = 0),
-           Scored = str_sub(Data, 11, 12)) %>% 
+           Scoring = case_when(Points == 2 ~ str_extract(Data, "safety|PAT return"),
+                           Points == 3 ~ str_extract(Data, "\\d+ yd field goal"),
+                           Points %in% 6:8 ~ str_replace(Data, ".* (\\d+ yd (pass|run|\\w+( \\w+)? return|fumble recovery)).*((kick|pass|rush)( \\w+)?).*", "\\1 + \\4"))) %>% 
     return()
 }
 
