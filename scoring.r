@@ -64,7 +64,7 @@ list('total point' = sum(hesub$Points),
 
 # graph ----
 
-## magle data ----
+## mangle data ----
 GB_info %>%
   filter(str_detect(GameID, "VV"), str_sub(GameID, 5, 6) == "23", !str_ends(GameID, "PO|FI")) %>% # Vienna Vikings, Season == 2023, keine PO oder FI Spiele
   pull(GameID) %>% # get GameIDs
@@ -73,7 +73,7 @@ GB_info %>%
                             .default = -Points)) %>% 
   add_row(Gametime = 0, Points = 0) %>% 
   arrange(Gametime) %>%
-  mutate(CumPoints = cumsum(Points / 4)) %>% # !!! no of games !!!
+  mutate(CumPoints = cumsum(Points / (length(unique(GameID)) - 1))) %>% # !!! no of games !!! -1 wegen NA durch add_row
 ## plot ----  
   ggplot() +
   aes(x = Gametime, y = CumPoints) +
@@ -82,7 +82,7 @@ GB_info %>%
   geom_step(linewidth = 1, color = "purple") +
   scale_x_continuous(name = "Spielzeit [Minuten]", breaks = seq(0, 60, 15), minor_breaks = seq(0, 60, 5), expand = c(0, 0)) +
   scale_y_continuous(name = "Kumulierte Punkte für und gegen die Vikings") +
-  labs(title = "Kombinierte Spiele der Vienna Vikings der 2023 ELF Saison bis inkl. Woche 5") +
+  labs(title = "Kombinierte Spiele der Vienna Vikings der 2023 ELF Saison bis inkl. Woche 7") +
   theme_bw() +
   theme(title =element_text(size = 14, face = "bold"),
         panel.background = element_rect(fill = "seagreen", colour = NA))
