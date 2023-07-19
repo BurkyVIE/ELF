@@ -33,6 +33,10 @@ results <- bind_rows(
   ungroup() |> 
   filter(!is.na(PF))
 
+### 2023 season Leipzig Kings breakdown after week 5 - games @/vs Cologne Centurions score 16-16 counted as W dor Cologne
+results <- rows_update(results, tibble(GameID = c("CCLK2307", "LKCC2312"), Team = "Leipzig Kings", Result = "L"), by = c("GameID", "Team"))
+results <- rows_update(results, tibble(GameID = c("CCLK2307", "LKCC2312"), Team = "Cologne Centurions", Result = "W"), by = c("GameID", "Team"))
+
 rm(raw)
 
 ## standings ----
