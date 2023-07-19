@@ -94,11 +94,3 @@ Week,Kickoff,Guest,Home,Pts_G,Pts_H
 14,2023-09-03 16:25 CET,Helvetic Guards,Stuttgart Surge,,
 14,2023-09-03 16:25 CET,Vienna Vikings,Prague Lions,,
 14,2023-09-03 16:25 CET,Panthers Wroclaw,Fehervar Enthroners,,
-
-6,2023-07-08 18:00 CET,Prague Lions,Leipzig Kings,35,0
-7,2023-07-15 17:00 CET,Leipzig Kings,Cologne Centurions,16,16
-8,2023-07-23 13:00 CET,Leipzig Kings,Panthers Wroclaw,6,31
-9,2023-07-30 13:00 CET,Vienna Vikings,Leipzig Kings,47,14
-11,2023-08-12 17:00 CET,Leipzig Kings,Fehervar Enthroners,24,47
-12,2023-08-19 18:00 CET,Cologne Centurions,Leipzig Kings,16,16
-13,2023-08-27 13:00 CET,Leipzig Kings,Berlin Thunder,14,39
