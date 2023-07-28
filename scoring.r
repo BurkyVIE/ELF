@@ -9,7 +9,7 @@ scoring <- function(GameID = "RTVV2201") {
   
   ## find Scoring Summary ----
   a <- which(str_starts(compgb, "Qtr Time")) + 1    # scoring summary from...
-  b <- which(str_starts(compgb, "Kickoff time")) -3 # ...to
+  b <- which(str_starts(compgb, "Kickoff time")) - 3 # ...to
   
   tibble(GameID = GameID,
          Data = compgb[a:b]) %>%
