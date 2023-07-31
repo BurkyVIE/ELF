@@ -11,12 +11,13 @@ results %>% filter(Result == "W" | (Result == "T" & Home)) %>% #Winners or Home 
   ggplot(mapping = aes(x = PF, y = PA)) +
   geom_tile(mapping = aes(fill = Count), color = '#1f1f1f') +
   scale_fill_distiller(palette = "GnBu", na.value = '#1f1f1f') +
-  scale_x_continuous(expand = c(0, 0),limits = function(x)x+c(-.5, +.5), breaks = function(x)seq(0, x[2], by = 5), minor_breaks = NULL) +
-  scale_y_continuous(expand = c(0, 0),limits = function(x)x+c(-.5, +.5), breaks = function(x)seq(0, x[2], by = 5), minor_breaks = NULL) +
+  scale_x_continuous(expand = c(0, 0), breaks = function(x)seq(0, x[2], by = 10)) + #,limits = function(x)x+c(-.5, +.5), minor_breaks = NULL) +
+  scale_y_continuous(expand = c(0, 0), breaks = function(x)seq(0, x[2], by = 10)) + #,limits = function(x)x+c(-.5, +.5), minor_breaks = NULL) +
   labs(x = "Winning Team Score", y = "Losing Team Score",
        title = "ELF Scorigami",
        subtitle = "Alltime ELF Scores, Regular and Playoff Games") +
-  theme_bw(base_size = 13) -> p
+  theme_bw(base_size = 13) +
+  theme(panel.background = element_rect(fill = "seagreen", colour = NA)) -> p
 
 #Plot
 windows(16, 9)
