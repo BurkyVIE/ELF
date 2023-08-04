@@ -59,12 +59,12 @@ Week,Kickoff,Guest,Home,Pts_G,Pts_H
 8,2023-07-23 16:25 CET,Cologne Centurions,Rhein Fire,3,62
 8,2023-07-23 16:25 CET,Prague Lions,Fehervar Enthroners,0,35
 8,2023-07-23 16:25 CET,Frankfurt Galaxy,Paris Musketeers,23,21
-9,2023-07-29 17:00 CET,Panthers Wroclaw,Prague Lions,,
-9,2023-07-29 19:00 CET,Paris Musketeers,Barcelona Dragons,,
-9,2023-07-29 19:00 CET,Stuttgart Surge,Milano Seamen,,
-9,2023-07-30 13:00 CET,Fehervar Enthroners,Frankfurt Galaxy,,
-9,2023-07-30 16:25 CET,Cologne Centurions,Hamburg Sea Devils,,
-9,2023-07-30 16:25 CET,Helvetic Guards,Munich Ravens,,
+9,2023-07-29 17:00 CET,Panthers Wroclaw,Prague Lions,73,13
+9,2023-07-29 19:00 CET,Paris Musketeers,Barcelona Dragons,37,6
+9,2023-07-29 19:00 CET,Stuttgart Surge,Milano Seamen,78,27
+9,2023-07-30 13:00 CET,Fehervar Enthroners,Frankfurt Galaxy,0,46
+9,2023-07-30 16:25 CET,Cologne Centurions,Hamburg Sea Devils,14,18
+9,2023-07-30 16:25 CET,Helvetic Guards,Munich Ravens,6,35
 11,2023-08-12 17:00 CET,Frankfurt Galaxy,Cologne Centurions,,
 11,2023-08-12 18:00 CET,Helvetic Guards,Raiders Tirol,,
 11,2023-08-12 19:00 CET,Milano Seamen,Barcelona Dragons,,
