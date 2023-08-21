@@ -9,10 +9,10 @@ results %>% filter(Result == "W" | (Result == "T" & Home)) %>% #Winners or Home 
   add_case(PF = c(1, 1:5, 7), PA = c(0, rep (1, 6))) %>% # impossible scores
   add_case(expand_grid(PF = 0:max(.$PF), PA = 0:max(.$PA)) %>% filter(PF < PA)) %>%  # Winner scores less than Loser
   ggplot(mapping = aes(x = PF, y = PA)) +
-  geom_tile(mapping = aes(fill = Count), color = '#1f1f1f') +
-  scale_fill_distiller(palette = "GnBu", na.value = '#1f1f1f') +
+  geom_tile(mapping = aes(fill = Count), color = '#2f2f2f') +
+  scale_fill_distiller(palette = "YlOrBr", na.value = '#2f2f2f') + # GnBu
   scale_x_continuous(expand = c(0, 0), breaks = function(x)seq(0, x[2], by = 10)) + #,limits = function(x)x+c(-.5, +.5), minor_breaks = NULL) +
-  scale_y_continuous(expand = c(0, 0), breaks = function(x)seq(0, x[2], by = 10)) + #,limits = function(x)x+c(-.5, +.5), minor_breaks = NULL) +
+  scale_y_continuous(expand = c(0, 0), breaks = function(x)seq(0, x[2], by = 10)) + #, position = "right" ,limits = function(x)x+c(-.5, +.5), minor_breaks = NULL) +
   labs(x = "Winning Team Score", y = "Losing Team Score",
        title = "ELF Scorigami",
        subtitle = "Alltime ELF Scores, Regular and Playoff Games") +
