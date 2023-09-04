@@ -82,7 +82,7 @@ GB_info %>%
   geom_step(linewidth = 1, color = "purple") +
   scale_x_continuous(name = "Spielzeit [Minuten]", breaks = seq(0, 60, 15), minor_breaks = seq(0, 60, 5), expand = c(0, 0)) +
   scale_y_continuous(name = "Kumulierte Punkte für und gegen die Vikings") +
-  labs(title = "Kombinierte Spiele der Vienna Vikings der 2023 ELF Saison bis inkl. Woche 7") +
+  labs(title = "Kombinierte Spiele der Vienna Vikings der 2023 ELF Saison") +
   theme_bw() +
   theme(title =element_text(size = 14, face = "bold"),
         panel.background = element_rect(fill = "seagreen", colour = NA))
