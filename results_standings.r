@@ -28,6 +28,7 @@ results <- bind_rows(
   rowwise() |>
   mutate(GameID = case_when(Home ~ paste0(Teamdata["Abb"], Oppdata["Abb"], Season%%100, sprintf("%02d", Week)), # rowwise wg Season und Week
                             TRUE ~ paste0(Oppdata["Abb"], Teamdata["Abb"], Season%%100, sprintf("%02d", Week))),
+         GameID = str_replace(GameID, "97", "WC"),
          GameID = str_replace(GameID, "98", "PO"),
          GameID = str_replace(GameID, "99", "FI")) |> 
   ungroup() |> 
@@ -36,6 +37,8 @@ results <- bind_rows(
 ### 2023 season Leipzig Kings folded after week 5 - games @/vs Cologne Centurions score 16-16 counted as W for Cologne
 results <- rows_update(results, tibble(GameID = c("CCLK2307", "LKCC2312"), Team = "Leipzig Kings", Result = "L"), by = c("GameID", "Team"))
 results <- rows_update(results, tibble(GameID = c("CCLK2307", "LKCC2312"), Team = "Cologne Centurions", Result = "W"), by = c("GameID", "Team"))
+### Following the Leipzig Kings folding in week 12 Prague gave the home right to Fehervar, who otherwise may have lost two home games
+### -> this only applies to the location the game was held, for statistics reasons nothing changed
 
 rm(raw)
 

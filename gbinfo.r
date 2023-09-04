@@ -79,5 +79,8 @@ if(dim(test_wrong)[1] == 0) {
   print(test_wrong)
 }
 
+results <- results |>
+  arrange(Season, Week, Kickoff)
+
 # CLEAN UP ----
 rm(scr_gb, scr_sbq, transf, test, test_wrong)
