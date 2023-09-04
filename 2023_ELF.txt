@@ -86,11 +86,16 @@ Week,Kickoff,Guest,Home,Pts_G,Pts_H
 13,2023-08-27 13:00 CET,Prague Lions,Cologne Centurions,9,37
 13,2023-08-27 13:00 CET,Rhein Fire,Helvetic Guards,43,17
 13,2023-08-27 16:25 CET,Frankfurt Galaxy,Hamburg Sea Devils,23,13
-14,2023-09-02 16:00 CET,Vienna Vikings,Prague Lions,,
-14,2023-09-02 19:00 CET,Raiders Tirol,Milano Seamen,,
-14,2023-09-03 13:00 CET,Cologne Centurions,Paris Musketeers,,
-14,2023-09-03 13:00 CET,Barcelona Dragons,Munich Ravens,,
-14,2023-09-03 13:00 CET,Hamburg Sea Devils,Berlin Thunder,,
-14,2023-09-03 16:25 CET,Rhein Fire,Frankfurt Galaxy,,
-14,2023-09-03 16:25 CET,Helvetic Guards,Stuttgart Surge,,
-14,2023-09-03 16:25 CET,Panthers Wroclaw,Fehervar Enthroners,,
+14,2023-09-02 16:00 CET,Vienna Vikings,Prague Lions,55,9
+14,2023-09-02 19:00 CET,Raiders Tirol,Milano Seamen,42,27
+14,2023-09-03 13:00 CET,Cologne Centurions,Paris Musketeers,12,40
+14,2023-09-03 13:00 CET,Barcelona Dragons,Munich Ravens,0,55
+14,2023-09-03 13:00 CET,Hamburg Sea Devils,Berlin Thunder,16,23
+14,2023-09-03 16:25 CET,Rhein Fire,Frankfurt Galaxy,48,38
+14,2023-09-03 16:25 CET,Helvetic Guards,Stuttgart Surge,19,47
+14,2023-09-03 16:25 CET,Panthers Wroclaw,Fehervar Enthroners,35,6
+97,2023-09-09  CET,Berlin Thunder,Frankfurt Galaxy,,
+97,2023-09-10  CET,Panthers Wroclaw,Stuttgart Surge,,
+98,2023-10-16  CET,,Vienna Vikings,,
+98,2023-10-17  CET,,Rhein Fire,,
+99,2023-10-24  CET,,,,
