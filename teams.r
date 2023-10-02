@@ -2,11 +2,19 @@
 library(tidyverse)
 
 # DATA ----
-present <- 2023
+present <- 2024
 
 ## Complete list of Franchise, Team, ... by Season ----
 teamdata_elf <- tribble(~Franchise, ~Team, ~Conference, ~Division, ~HomeField,
 ### A B C D E ----                        
+         "Bravos", tribble(~Team, ~Abb, ~Season,
+                           "Madrid Bravos", "MB", 2024:present),
+                   tribble(~Conference, ~Season,
+                           "TBD", 2024:present),
+                   tribble(~Division, ~Season,
+                           NA, NA),
+                   tribble(~Stadium, ~Location, ~Lat, ~Long, ~Season,
+                           "TBD", "Madrid, ES", NA, NA, 2024:present),
       "Centurions", tribble(~Team, ~Abb, ~Season,
                             "Cologne Centurions", "CC", 2021:present),
                     tribble(~Conference, ~Season,
@@ -63,15 +71,15 @@ teamdata_elf <- tribble(~Franchise, ~Team, ~Conference, ~Division, ~HomeField,
                             "Sportpark Bergholz", "Zürich, CH", 47.458333, 9.037222, 2023:present),
 ### K L M N O ----
            "Kings", tribble(~Team, ~Abb, ~Season,
-                            "Leipzig Kings", "LK", 2021:present),
+                            "Leipzig Kings", "LK", 2021:2023),
                     tribble(~Conference, ~Season,
                             "Northern", 2022,
-                            "Eastern", 2023:present),
+                            "Eastern", 2023:2023),
                     tribble(~Division, ~Season,
                             "North", 2021),
                     tribble(~Stadium, ~Location, ~Lat, ~Long, ~Season,
                             "Alfred-Kunze-Sportpark", "Leipzig, DE", 51.358056, 12.307778, 2021,
-                            "Bruno-Plache-Stadion", "Leipzig, DE", 51.302778, 12.419167, 2022:present),
+                            "Bruno-Plache-Stadion", "Leipzig, DE", 51.302778, 12.419167, 2022:2023),
            "Lions", tribble(~Team, ~Abb, ~Season,
                             "Prague Lions", "PL", 2023:present),
                     tribble(~Conference, ~Season,
@@ -172,7 +180,7 @@ teamdata_elf <- tribble(~Franchise, ~Team, ~Conference, ~Division, ~HomeField,
 # TRANSFORM ----
 ## Teamdata ----
 teamdata_elf <- teamdata_elf |>
-  mutate(across(Team:HomeField, ~ map(.x, ~ unnest_longer(., "Season")))) # expandiere Seasons in nested tibbles
+  mutate(across(Team:HomeField, ~ modify(.x, ~ unnest_longer(., "Season")))) # expandiere Seasons in nested tibbles
 
 ## Team_info ----
 teaminfo_elf <-
