@@ -96,6 +96,6 @@ Week,Kickoff,Guest,Home,Pts_G,Pts_H
 14,2023-09-03 16:25 CET,Panthers Wroclaw,Fehervar Enthroners,35,6
 97,2023-09-09 15:15 CET,Berlin Thunder,Frankfurt Galaxy,3,20
 97,2023-09-10 14:15 CET,Panthers Wroclaw,Stuttgart Surge,14,37
-98,2023-10-16 14:15 CET,Stuttgart Surge,Vienna Vikings,,
-98,2023-10-17 14:15 CET,Frankfurt Galaxy,Rhein Fire,,
-99,2023-10-24  CET,,,,
+98,2023-10-16 14:15 CET,Stuttgart Surge,Vienna Vikings,40,33
+98,2023-10-17 14:15 CET,Frankfurt Galaxy,Rhein Fire,23,42
+99,2023-10-24 15:30 CET,Stuttgart Surge,Rhein Fire,34,53
