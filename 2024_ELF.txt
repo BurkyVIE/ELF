@@ -43,14 +43,14 @@ Week,Kickoff,Guest,Home,Pts_G,Pts_H
 6,2024-06-30 13:00 CET,Cologne Centurions,Paris Musketeers,25,60
 6,2024-06-30 16:25 CET,Berlin Thunder,Prague Lions,34,7
 6,2024-06-30 16:25 CET,Hamburg Sea Devils,Frankfurt Galaxy,18,24
-7,2024-07-06 13:00 CET,Berlin Thunder,Fehervar Enthroners,,
-7,2024-07-06 18:00 CET,Vienna Vikings,Raiders Tirol,,
-7,2024-07-06 18:00 CET,Munich Ravens,Barcelona Dragons,,
-7,2024-07-06 18:00 CET,Milano Seamen,Helvetic Mercenaries,,
-7,2024-07-06 19:00 CET,Frankfurt Galaxy,Madrid Bravos,,
-7,2024-07-07 13:00 CET,Hamburg Sea Devils,Paris Musketeers,,
-7,2024-07-07 16:25 CET,Prague Lions,Panthers Wroclaw,,
-7,2024-07-07 16:25 CET,Cologne Centurions,Rhein Fire,,
+7,2024-07-06 18:00 CET,Vienna Vikings,Raiders Tirol,27,19
+7,2024-07-06 18:00 CET,Munich Ravens,Barcelona Dragons,54,0
+7,2024-07-06 18:00 CET,Milano Seamen,Helvetic Mercenaries,10,16
+7,2024-07-06 19:00 CET,Frankfurt Galaxy,Madrid Bravos,15,46
+7,2024-07-07 13:00 CET,Berlin Thunder,Fehervar Enthroners,47,0
+7,2024-07-07 13:00 CET,Hamburg Sea Devils,Paris Musketeers,18,41
+7,2024-07-07 16:25 CET,Prague Lions,Panthers Wroclaw,3,14
+7,2024-07-07 16:25 CET,Cologne Centurions,Rhein Fire,9,62
 8,2024-07-13 16:00 CET,Fehervar Enthroners,Prague Lions,,
 8,2024-07-13 18:00 CET,Cologne Centurions,Frankfurt Galaxy,,
 8,2024-07-13 18:00 CET,Helvetic Mercenaries,Vienna Vikings,,
