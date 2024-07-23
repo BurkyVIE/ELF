@@ -58,13 +58,13 @@ Week,Kickoff,Guest,Home,Pts_G,Pts_H
 8,2024-07-14 13:00 CET,Berlin Thunder,Paris Musketeers,27,35
 8,2024-07-14 16:25 CET,Rhein Fire,Hamburg Sea Devils,61,23
 8,2024-07-14 16:25 CET,Stuttgart Surge,Raiders Tirol,30,25
-9,2024-07-20 15:00 CET,Milano Seamen,Fehervar Enthroners,,
-9,2024-07-20 19:00 CET,Paris Musketeers,Madrid Bravos,,
-9,2024-07-21 13:00 CET,Vienna Vikings,Berlin Thunder,,
-9,2024-07-21 13:00 CET,Panthers Wroclaw,Stuttgart Surge,,
-9,2024-07-21 13:00 CET,Helvetic Mercenaries,Munich Ravens,,
-9,2024-07-21 16:25 CET,Frankfurt Galaxy,Rhein Fire,,
-9,2024-07-21 16:25 CET,Hamburg Sea Devils,Cologne Centurions,,
+9,2024-07-20 15:00 CET,Milano Seamen,Fehervar Enthroners17,27,
+9,2024-07-21 13:00 CET,Paris Musketeers,Madrid Bravos,29,13
+9,2024-07-21 13:00 CET,Vienna Vikings,Berlin Thunder,34,9
+9,2024-07-21 13:00 CET,Panthers Wroclaw,Stuttgart Surge,0,40
+9,2024-07-21 13:00 CET,Helvetic Mercenaries,Munich Ravens,23,55
+9,2024-07-21 16:25 CET,Frankfurt Galaxy,Rhein Fire,13,48
+9,2024-07-21 16:25 CET,Hamburg Sea Devils,Cologne Centurions,25,32
 10,2024-07-27 17:00 CET,Fehervar Enthroners,Panthers Wroclaw,,
 10,2024-07-27 18:00 CET,Prague Lions,Vienna Vikings,,
 10,2024-07-27 18:00 CET,Stuttgart Surge,Barcelona Dragons,,
