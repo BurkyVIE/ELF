@@ -65,14 +65,14 @@ Week,Kickoff,Guest,Home,Pts_G,Pts_H
 9,2024-07-21 13:00 CET,Helvetic Mercenaries,Munich Ravens,23,55
 9,2024-07-21 16:25 CET,Frankfurt Galaxy,Rhein Fire,13,48
 9,2024-07-21 16:25 CET,Hamburg Sea Devils,Cologne Centurions,25,32
-10,2024-07-27 17:00 CET,Fehervar Enthroners,Panthers Wroclaw,,
-10,2024-07-27 18:00 CET,Prague Lions,Vienna Vikings,,
-10,2024-07-27 18:00 CET,Stuttgart Surge,Barcelona Dragons,,
-10,2024-07-27 19:00 CET,Cologne Centurions,Madrid Bravos,,
-10,2024-07-27 13:00 CET,Milano Seamen,Munich Ravens,,
-10,2024-07-28 13:00 CET,Paris Musketeers,Rhein Fire,,
-10,2024-07-28 16:25 CET,Frankfurt Galaxy,Hamburg Sea Devils,,
-10,2024-07-28 16:25 CET,Helvetic Mercenaries,Raiders Tirol,,
+10,2024-07-27 17:00 CET,Fehervar Enthroners,Panthers Wroclaw,12,62
+10,2024-07-27 18:00 CET,Prague Lions,Vienna Vikings,23,62
+10,2024-07-27 18:00 CET,Stuttgart Surge,Barcelona Dragons,71,7
+10,2024-07-27 19:00 CET,Cologne Centurions,Madrid Bravos,0,37
+10,2024-07-28 13:00 CET,Paris Musketeers,Rhein Fire,6,38
+10,2024-07-27 13:00 CET,Milano Seamen,Munich Ravens,30,69
+10,2024-07-28 16:25 CET,Helvetic Mercenaries,Raiders Tirol,28,42
+10,2024-07-28 16:25 CET,Frankfurt Galaxy,Hamburg Sea Devils,40,23
 11,2024-08-03 18:00 CET,Vienna Vikings,Helvetic Mercenaries,,
 11,2024-08-03 19:00 CET,Hamburg Sea Devils,Madrid Bravos,,
 11,2024-08-03 19:00 CET,Stuttgart Surge,Milano Seamen,,
