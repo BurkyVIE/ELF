@@ -20,7 +20,7 @@ results <- bind_rows(
                             PF == PA ~ "T",
                             TRUE ~ NA_character_)) %>% 
   relocate(Home, .after = "Team") %>% 
-  arrange(Kickoff) |>
+  arrange(Season, Week, hour(Kickoff), minute(Kickoff)) |>
   left_join(teaminfo_elf, by = c("Team", "Season")) |>
   nest(Teamdata = Franchise:Division) |> 
   left_join(teaminfo_elf, by = c("Opponent" = "Team", "Season")) |> 
