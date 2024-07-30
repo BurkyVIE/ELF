@@ -58,7 +58,7 @@ Week,Kickoff,Guest,Home,Pts_G,Pts_H
 8,2024-07-14 13:00 CET,Berlin Thunder,Paris Musketeers,27,35
 8,2024-07-14 16:25 CET,Rhein Fire,Hamburg Sea Devils,61,23
 8,2024-07-14 16:25 CET,Stuttgart Surge,Raiders Tirol,30,25
-9,2024-07-20 15:00 CET,Milano Seamen,Fehervar Enthroners17,27,
+9,2024-07-20 15:00 CET,Milano Seamen,Fehervar Enthroners,17,27
 9,2024-07-21 13:00 CET,Paris Musketeers,Madrid Bravos,29,13
 9,2024-07-21 13:00 CET,Vienna Vikings,Berlin Thunder,34,9
 9,2024-07-21 13:00 CET,Panthers Wroclaw,Stuttgart Surge,0,40
