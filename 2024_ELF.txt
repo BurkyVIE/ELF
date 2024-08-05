@@ -73,7 +73,7 @@ Week,Kickoff,Guest,Home,Pts_G,Pts_H
 10,2024-07-27 13:00 CET,Milano Seamen,Munich Ravens,30,69
 10,2024-07-28 16:25 CET,Helvetic Mercenaries,Raiders Tirol,28,42
 10,2024-07-28 16:25 CET,Frankfurt Galaxy,Hamburg Sea Devils,40,23
-11,2024-08-03 18:00 CET,Vienna Vikings,Helvetic Mercenaries,49,,
+11,2024-08-03 18:00 CET,Vienna Vikings,Helvetic Mercenaries,49,3,
 11,2024-08-03 19:00 CET,Hamburg Sea Devils,Madrid Bravos,9,52
 11,2024-08-03 19:00 CET,Stuttgart Surge,Milano Seamen,51,18
 11,2024-08-04 13:00 CET,Frankfurt Galaxy,Cologne Centurions,37,43
