@@ -43,31 +43,68 @@ results <- rows_update(results, tibble(GameID = c("CCLK2307", "LKCC2312"), Team 
 rm(raw)
 
 ## standings ----
-standings <- results %>%
-  select(Season, Week, Kickoff, Team, Teamdata, Result, PF, PA) %>% 
-  unnest(Teamdata) |> 
-  # group_by(Season) %>% 
-  complete(Week = 1:max(Week[Week < 30]), nesting(Season, Team), # add bye-weeks
-           fill = list(PF = 0, PA = 0)) %>% 
-  # ungroup() %>%
-  mutate(Result = case_when(is.na(Result) ~ "bye",
-                            TRUE ~ Result),
-         W = ifelse(Result == "W", 1, 0),
-         L = ifelse(Result == "L", 1, 0),
-         T = ifelse(Result == "T", 1, 0),
-         Post = Week > 30) %>% 
-  group_by(Season, Team, Post) %>%
-  mutate_at(.vars = vars(PF:T), .funs = cumsum) %>% 
-  select(Season, Week, Kickoff, Team, Franchise, Division, Conference, Result, Post, PFc = PF, PAc = PA, W:T) %>%
-  ungroup() %>%
-  mutate(Pct = ((W + 1/2 * T) / (W + L + T)) %>%
-      round(3),
-      WLT = case_when(
-        T == 0 ~ paste0("(", W, "-", L, ")"),
-        TRUE ~ paste0("(", W, "-", L, "-", T, ")"))) %>% 
-  select(Season:Team, Franchise:Conference, Kickoff:WLT) %>% 
-  arrange(Season, Week, -Pct, -PFc, PAc)
+# all season x week combinations ----
+base <- filter(results, Week < 30) |> # no PS games
+  select(Season, Week) |>
+  unique() |>
+  bind_rows(tibble(Season = c(2022, 2023), Week = c(10, 10))) |> # general bye weeks in 2022 and 2023 in W10
+  arrange(Season, Week)
+
+# corresponding teams
+base <- left_join(base,
+                  teaminfo_elf,
+                  by = c("Season"),
+                  relationship = "many-to-many")
+
+# join results ----
+data <- left_join(base,
+                  select(results, Season, Week, Team, PF, PA, Result) |> 
+                    mutate(Result = factor(Result, levels = c("W", "L", "T", "bye"))),
+                  by = c("Season", "Week", "Team"))
+
+# add bye information
+data <- replace_na(data,
+                   replace = list(PF = 0, PA = 0, Result = "bye")) # 
+
+#  ----
+standings <- mutate(data, one = 1L) |> 
+  pivot_wider(names_from = Result, values_from = one, names_expand = TRUE, values_fill = list(one = 0)) |> 
+  group_by(Season, Team) |> 
+  mutate(across(c(PF, PA, W, L, T), ~cumsum(.))) |>
+  ungroup() |> 
+  mutate(WLT = case_when(T == 0 ~ paste0("(", W, "-", L, ")"),
+                         TRUE ~ paste0("(", W, "-", L, "-", T, ")")),
+         Pct = num((W + 1/2 * T) / (W + L + T), digits = 3)) |> 
+  select(!c(Abb, W:bye)) |> 
+  arrange(Season, Franchise, Week)
+
+# CLEAN UP ----
+rm(base, data)
+## OLD VERSION standings ----
+# standings <- results %>%
+#   select(Season, Week, Kickoff, Team, Teamdata, Result, PF, PA) %>% 
+#   unnest(Teamdata) |> 
+#   # group_by(Season) %>% 
+#   complete(Week = 1:max(Week[Week < 30]), nesting(Season, Team), # add bye-weeks
+#            fill = list(PF = 0, PA = 0)) %>% 
+#   # ungroup() %>%
+#   mutate(Result = case_when(is.na(Result) ~ "bye",
+#                             TRUE ~ Result),
+#          W = ifelse(Result == "W", 1, 0),
+#          L = ifelse(Result == "L", 1, 0),
+#          T = ifelse(Result == "T", 1, 0),
+#          Post = Week > 30) %>% 
+#   group_by(Season, Team, Post) %>%
+#   mutate_at(.vars = vars(PF:T), .funs = cumsum) %>% 
+#   select(Season, Week, Kickoff, Team, Franchise, Division, Conference, Result, Post, PFc = PF, PAc = PA, W:T) %>%
+#   ungroup() %>%
+#   mutate(Pct = ((W + 1/2 * T) / (W + L + T)) %>%
+#       round(3),
+#       WLT = case_when(
+#         T == 0 ~ paste0("(", W, "-", L, ")"),
+#         TRUE ~ paste0("(", W, "-", L, "-", T, ")"))) %>% 
+#   select(Season:Team, Franchise:Conference, Kickoff:WLT) %>% 
+#   arrange(Season, Week, -Pct, -PFc, PAc)
 
 # RESPONSE ----
 cat("..ELF > results and standings generated ✔\n")
-
