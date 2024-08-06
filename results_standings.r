@@ -47,7 +47,7 @@ rm(raw)
 base <- filter(results, Week < 30) |> # no PS games
   select(Season, Week) |>
   unique() |>
-  bind_rows(tibble(Season = c(2022, 2023), Week = c(10, 10))) |> # general bye weeks in 2022 and 2023 in W10
+  bind_rows(tibble(Season = c(2022, 2023), Week = c(10L, 10L))) |> # general bye weeks in 2022 and 2023 in W10
   arrange(Season, Week)
 
 # corresponding teams
@@ -82,6 +82,7 @@ standings <- mutate(data, one = 1L) |>
 
 # CLEAN UP ----
 rm(base, data)
+
 ## OLD VERSION standings ----
 # standings <- results %>%
 #   select(Season, Week, Kickoff, Team, Teamdata, Result, PF, PA) %>% 
