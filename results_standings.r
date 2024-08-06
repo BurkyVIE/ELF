@@ -74,8 +74,10 @@ standings <- mutate(data, one = 1L) |>
   ungroup() |> 
   mutate(WLT = case_when(T == 0 ~ paste0("(", W, "-", L, ")"),
                          TRUE ~ paste0("(", W, "-", L, "-", T, ")")),
-         Pct = num((W + 1/2 * T) / (W + L + T), digits = 3)) |> 
-  select(!c(Abb, W:bye)) |> 
+         Pct = num((W + 1/2 * T) / (W + L + T), digits = 3),
+         bye = bye == 1) |> 
+  select(!c(Abb, W:T)) |>
+  relocate(bye, .after = Week) |> 
   arrange(Season, Franchise, Week)
 
 # CLEAN UP ----
