@@ -2,9 +2,9 @@
 library(tidyverse)
 
 # FUNCTIONS ----
-## einlese-funktion ----
+## import function ----
 import <- function(df) {
-  df %>% 
+  dat <- df |> 
     mutate(Season = as.integer(substr(file, 1, 4)),
            Data = map(.x = file,
                       .f = ~ read_csv(.,
@@ -14,15 +14,16 @@ import <- function(df) {
                                                        Home = col_character(),
                                                        Guest = col_character(),
                                                        Pts_H = col_integer(),
-                                                       Pts_G = col_integer()))
-                      %>% mutate(Kickoff = as.POSIXct(Kickoff)))) %>% 
-    relocate(Season) %>% 
-    return()
+                                                       Pts_G = col_integer())) |>
+                        mutate(Kickoff = as.POSIXct(Kickoff)))) |> 
+    relocate(Season)
+  
+    return(dat)
 }
 
 ## DATA ----
-data_raw <- dir()[dir() %>% str_ends("ELF.txt")] %>%
-  tibble(file = .) %>%
+data_raw <- dir()[str_ends(dir(), "ELF.txt")] |>
+  (\(x) tibble(file = x))() |>
   import()
 
 # RESPONSE ----
