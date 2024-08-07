@@ -27,7 +27,7 @@ Week,Kickoff,Guest,Home,Pts_G,Pts_H
 4,2023-06-24 18:00 CET,Leipzig Kings,Vienna Vikings,14,47
 4,2023-06-24 19:00 CET,Munich Ravens,Barcelona Dragons,39,15
 4,2023-06-25 13:00 CET,Helvetic Guards,Milano Seamen,0,32
-4,2023-06-25 13:00CET,Raiders Tirol,Stuttgart Surge,3,6
+4,2023-06-25 13:00 CET,Raiders Tirol,Stuttgart Surge,3,6
 4,2023-06-25 16:25 CET,Rhein Fire,Cologne Centurions,42,0
 4,2023-06-25 16:25 CET,Berlin Thunder,Hamburg Sea Devils,17,37
 5,2023-07-01 14:30 CET,Helvetic Guards,Rhein Fire,0,51
