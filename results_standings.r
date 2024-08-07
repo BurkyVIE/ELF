@@ -7,19 +7,19 @@ source("import.r")
 
 # DATA ----
 ## results ----
-raw <- data_raw %>% 
-  select(-file) %>% 
+raw <- data_raw |> 
+  select(-file) |> 
   unnest_longer(Data) |> unpack(Data)
 
 results <- bind_rows(
-  raw %>% rename(Team = Guest, Opponent = Home, PF = Pts_G, PA = Pts_H) %>% add_column(Home = FALSE),
-  raw %>% rename(Team = Home, Opponent = Guest, PF = Pts_H, PA = Pts_G) %>% add_column(Home = TRUE)
-) %>%
+  raw |> rename(Team = Guest, Opponent = Home, PF = Pts_G, PA = Pts_H) |> add_column(Home = FALSE),
+  raw |> rename(Team = Home, Opponent = Guest, PF = Pts_H, PA = Pts_G) |> add_column(Home = TRUE)
+) |>
   mutate(Result = case_when(PF > PA ~ "W",
                             PF < PA ~ "L",
                             PF == PA ~ "T",
-                            TRUE ~ NA_character_)) %>% 
-  relocate(Home, .after = "Team") %>% 
+                            TRUE ~ NA_character_)) |> 
+  relocate(Home, .after = "Team") |> 
   arrange(Season, Week, hour(Kickoff), minute(Kickoff)) |>
   left_join(teaminfo_elf, by = c("Team", "Season")) |>
   nest(Teamdata = Franchise:Division) |> 
