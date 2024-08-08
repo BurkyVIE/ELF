@@ -2,7 +2,7 @@
 library(tidyverse)
 
 # INPUT ----
-selection <- "Raiders"
+selection <- "Vikings"
 
 # DATA ----
 dat <- filter(teaminfo_elf, Franchise == selection) |> 
