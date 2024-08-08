@@ -5,7 +5,7 @@ library(tidyverse)
 ## import function ----
 import <- function(df) {
   dat <- df |> 
-    mutate(Season = as.integer(substr(file, 1, 4)),
+    mutate(Season = as.integer(str_extract(file, "\\d{4}")),
            Data = map(.x = file,
                       .f = ~ read_csv(.,
                                       lazy = FALSE,
@@ -22,7 +22,7 @@ import <- function(df) {
 }
 
 ## DATA ----
-data_raw <- dir()[str_ends(dir(), "ELF.txt")] |>
+data_raw <- dir(pattern = "\\d{4}\\_.*ELF\\.txt", recursive = TRUE) |> 
   (\(x) tibble(file = x))() |>
   import()
 
