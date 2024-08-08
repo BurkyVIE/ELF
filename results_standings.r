@@ -11,12 +11,12 @@ raw <- data_raw |>
   select(-file) |> 
   unnest_longer(Data) |> # full list of game data
   unpack(Data) |> 
-  left_join(teaminfo_elf, by = c("Guest" = "Team", "Season")) |> 
+  left_join(teaminfo_elf, by = c("Guest" = "Team", "Season")) |> # enrich team info
   nest(Guestdata = Franchise:Division) |> 
   left_join(teaminfo_elf, by = c("Home" = "Team", "Season")) |> 
   nest(Homedata = Franchise:Division) |>
-  rowwise() |>
-  mutate(GameID = paste0(Homedata["Abb"], Guestdata["Abb"], Season%%100, sprintf("%02d", Week)),
+  rowwise() |> # rowwise wg Season und Week
+  mutate(GameID = paste0(Homedata["Abb"], Guestdata["Abb"], Season%%100, sprintf("%02d", Week)), # generate GameID
          GameID = str_replace(GameID, "97", "WC"),
          GameID = str_replace(GameID, "98", "PO"),
          GameID = str_replace(GameID, "99", "FI")) |> 
@@ -33,6 +33,7 @@ results <- bind_rows(
   relocate(Result, Home, .after = "PA") |> 
   arrange(Season, Week, hour(Kickoff), minute(Kickoff))
 
+## OLD VERSION results ----
 # raw <- data_raw |> 
 #   select(-file) |> 
 #   unnest_longer(Data) |> unpack(Data)
