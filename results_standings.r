@@ -9,30 +9,56 @@ source("import.r")
 ## results ----
 raw <- data_raw |> 
   select(-file) |> 
-  unnest_longer(Data) |> unpack(Data)
+  unnest_longer(Data) |> # full list of game data
+  unpack(Data) |> 
+  left_join(teaminfo_elf, by = c("Guest" = "Team", "Season")) |> 
+  nest(Guestdata = Franchise:Division) |> 
+  left_join(teaminfo_elf, by = c("Home" = "Team", "Season")) |> 
+  nest(Homedata = Franchise:Division) |>
+  rowwise() |>
+  mutate(GameID = paste0(Homedata["Abb"], Guestdata["Abb"], Season%%100, sprintf("%02d", Week)),
+         GameID = str_replace(GameID, "97", "WC"),
+         GameID = str_replace(GameID, "98", "PO"),
+         GameID = str_replace(GameID, "99", "FI")) |> 
+  relocate(GameID, .after = "Pts_H")
 
 results <- bind_rows(
-  raw |> rename(Team = Guest, Opponent = Home, PF = Pts_G, PA = Pts_H) |> add_column(Home = FALSE),
-  raw |> rename(Team = Home, Opponent = Guest, PF = Pts_H, PA = Pts_G) |> add_column(Home = TRUE)
-) |>
+  raw |> rename(Team = Guest, Opponent = Home, PF = Pts_G, PA = Pts_H, Teamdata = Guestdata, Oppdata = Homedata) |> add_column(Home = FALSE),
+  raw |> rename(Team = Home, Opponent = Guest, PF = Pts_H, PA = Pts_G, Teamdata = Homedata, Oppdata = Guestdata) |> add_column(Home = TRUE)) |>
+  filter(!is.na(PF)) |> 
   mutate(Result = case_when(PF > PA ~ "W",
                             PF < PA ~ "L",
                             PF == PA ~ "T",
                             TRUE ~ NA_character_)) |> 
-  relocate(Home, .after = "Team") |> 
-  arrange(Season, Week, hour(Kickoff), minute(Kickoff)) |>
-  left_join(teaminfo_elf, by = c("Team", "Season")) |>
-  nest(Teamdata = Franchise:Division) |> 
-  left_join(teaminfo_elf, by = c("Opponent" = "Team", "Season")) |> 
-  nest(Oppdata = Franchise:Division) |> 
-  rowwise() |>
-  mutate(GameID = case_when(Home ~ paste0(Teamdata["Abb"], Oppdata["Abb"], Season%%100, sprintf("%02d", Week)), # rowwise wg Season und Week
-                            TRUE ~ paste0(Oppdata["Abb"], Teamdata["Abb"], Season%%100, sprintf("%02d", Week))),
-         GameID = str_replace(GameID, "97", "WC"),
-         GameID = str_replace(GameID, "98", "PO"),
-         GameID = str_replace(GameID, "99", "FI")) |> 
-  ungroup() |> 
-  filter(!is.na(PF))
+  relocate(Result, Home, .after = "PA") |> 
+  arrange(Season, Week, hour(Kickoff), minute(Kickoff))
+
+# raw <- data_raw |> 
+#   select(-file) |> 
+#   unnest_longer(Data) |> unpack(Data)
+# 
+# results <- bind_rows(
+#   raw |> rename(Team = Guest, Opponent = Home, PF = Pts_G, PA = Pts_H) |> add_column(Home = FALSE),
+#   raw |> rename(Team = Home, Opponent = Guest, PF = Pts_H, PA = Pts_G) |> add_column(Home = TRUE)
+# ) |>
+#   mutate(Result = case_when(PF > PA ~ "W",
+#                             PF < PA ~ "L",
+#                             PF == PA ~ "T",
+#                             TRUE ~ NA_character_)) |> 
+#   relocate(Home, .after = "Team") |> 
+#   arrange(Season, Week, hour(Kickoff), minute(Kickoff)) |>
+#   left_join(teaminfo_elf, by = c("Team", "Season")) |>
+#   nest(Teamdata = Franchise:Division) |> 
+#   left_join(teaminfo_elf, by = c("Opponent" = "Team", "Season")) |> 
+#   nest(Oppdata = Franchise:Division) |> 
+#   rowwise() |>
+#   mutate(GameID = case_when(Home ~ paste0(Teamdata["Abb"], Oppdata["Abb"], Season%%100, sprintf("%02d", Week)), # rowwise wg Season und Week
+#                             TRUE ~ paste0(Oppdata["Abb"], Teamdata["Abb"], Season%%100, sprintf("%02d", Week))),
+#          GameID = str_replace(GameID, "97", "WC"),
+#          GameID = str_replace(GameID, "98", "PO"),
+#          GameID = str_replace(GameID, "99", "FI")) |> 
+#   ungroup() |> 
+#   filter(!is.na(PF))
 
 ### 2023 season Leipzig Kings folded after week 5 - games @/vs Cologne Centurions score 16-16 counted as W for Cologne
 results <- rows_update(results, tibble(GameID = c("CCLK2307", "LKCC2312"), Team = "Leipzig Kings", Result = "L"), by = c("GameID", "Team"))
@@ -111,3 +137,4 @@ rm(base, data)
 
 # RESPONSE ----
 cat("..ELF > results and standings generated ✔\n")
+
