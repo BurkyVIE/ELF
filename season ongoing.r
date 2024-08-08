@@ -22,15 +22,15 @@ ggplot(dat) +
   scale_x_continuous(breaks = seq(2, 20, by = 4), minor_breaks = seq(0, 20, by = 2)) +
   scale_y_continuous(lim = c(0, 1)) +
   scale_color_viridis_d(option = "H") +
-  facet_wrap(~Season+ConfDiv) +
-  labs(title = paste("ELF RS Ongoing for", selection),
+  # scale_color_brewer(palette = "YlOrBr") +
+  facet_wrap(~Season+ConfDiv, ncol = 2) +
+  labs(title = paste("ELF RS Ongoing for the", selection),
        subtitle = "Opponents according to Conference/Division") +theme_bw(base_size = 13) +
   theme(panel.background = element_rect(fill = "seagreen", colour = NA)) -> p
 
 ## Plot ----
 windows(16, 9)
 plot(p)
-rm(p)
 
 # CLEAN UP ----
 rm(selection, dat, p)
