@@ -21,7 +21,7 @@ import <- function(df) {
 }
 
 ## DATA ----
-data_raw <- dir(pattern = "\\d{4}\\_.*ELF\\.txt", recursive = TRUE) |> 
+data_raw <- dir(pattern = "\\d{4}.*ELF\\.txt", recursive = TRUE) |> 
   enframe(name = NULL, value = "file") |>
   mutate(Season = as.integer(str_extract(file, "\\d{4}"))) |> 
   import()
