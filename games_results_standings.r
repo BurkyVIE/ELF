@@ -6,7 +6,7 @@ source("teams.r")
 source("import.r")
 
 # DATA ----
-## results ----
+## games ----
 games <- data_raw |> 
   select(-file) |> 
   unnest_longer(Data) |> # full list of game data
@@ -22,6 +22,7 @@ games <- data_raw |>
          GameID = str_replace(GameID, "99", "FI")) |> 
   relocate(GameID, .after = "Pts_H")
 
+## results ----
 results <- bind_rows(
   games |> rename(Team = Guest, Opponent = Home, PF = Pts_G, PA = Pts_H, Teamdata = Guestdata, Oppdata = Homedata) |> add_column(Home = FALSE),
   games |> rename(Team = Home, Opponent = Guest, PF = Pts_H, PA = Pts_G, Teamdata = Homedata, Oppdata = Guestdata) |> add_column(Home = TRUE)) |>
