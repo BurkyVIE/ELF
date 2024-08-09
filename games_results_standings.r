@@ -82,5 +82,4 @@ standings <- mutate(data, one = 1L) |>
 rm(base, data)
 
 # RESPONSE ----
-cat("..ELF > results and standings generated ✔\n")
-
+cat("..ELF > games, results and standings generated ✔\n")
