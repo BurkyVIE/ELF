@@ -84,8 +84,8 @@ Week,Kickoff,Guest,Home,Pts_G,Pts_H
 12,2024-08-11 13:00 CET,Raiders Tirol,Stuttgart Surge,45,42
 12,2024-08-11 13:00 CET,Paris Musketeers,Cologne Centurions,57,7
 12,2024-08-11 13:00 CET,Barcelona Dragons,Munich Ravens,0,90
-12,2024-08-11 16:25 CET,Panthers Wroclaw,Berlin Thunder,,
-12,2024-08-11 16:25 CET,Hamburg Sea Devils,Rhein Fire,,
+12,2024-08-11 16:25 CET,Panthers Wroclaw,Berlin Thunder,34,36
+12,2024-08-11 16:25 CET,Hamburg Sea Devils,Rhein Fire,2,51
 13,2024-08-17 16:00 CET,Madrid Bravos,Paris Musketeers,,
 13,2024-08-17 18:00 CET,Milano Seamen,Raiders Tirol,,
 13,2024-08-17 18:00 CET,Fehervar Enthroners,Vienna Vikings,,
