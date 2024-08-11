@@ -79,11 +79,11 @@ Week,Kickoff,Guest,Home,Pts_G,Pts_H
 11,2024-08-04 13:00 CET,Frankfurt Galaxy,Cologne Centurions,37,43
 11,2024-08-04 16:25 CET,Paris Musketeers,Berlin Thunder,40,37
 11,2024-08-04 16:25 CET,Munich Ravens,Prague Lions,47,14
-12,2024-08-10 15:00 CET,Prague Lions,Fehervar Enthroners,,
-12,2024-08-10 18:00 CET,Madrid Bravos,Frankfurt Galaxy,,
-12,2024-08-11 13:00 CET,Raiders Tirol,Stuttgart Surge,,
-12,2024-08-11 13:00 CET,Paris Musketeers,Cologne Centurions,,
-12,2024-08-11 13:00 CET,Barcelona Dragons,Munich Ravens,,
+12,2024-08-10 15:00 CET,Prague Lions,Fehervar Enthroners,9,6
+12,2024-08-10 18:00 CET,Madrid Bravos,Frankfurt Galaxy,20,37
+12,2024-08-11 13:00 CET,Raiders Tirol,Stuttgart Surge,45,42
+12,2024-08-11 13:00 CET,Paris Musketeers,Cologne Centurions,57,7
+12,2024-08-11 13:00 CET,Barcelona Dragons,Munich Ravens,0,90
 12,2024-08-11 16:25 CET,Panthers Wroclaw,Berlin Thunder,,
 12,2024-08-11 16:25 CET,Hamburg Sea Devils,Rhein Fire,,
 13,2024-08-17 16:00 CET,Madrid Bravos,Paris Musketeers,,
