@@ -32,7 +32,7 @@ results <- bind_rows(
                             PF == PA ~ "T",
                             TRUE ~ NA_character_)) |> 
   relocate(Result, Home, .after = "PA") |> 
-  arrange(Season, Week, hour(Kickoff), minute(Kickoff))
+  arrange(Season, Week, Kickoff)
 
 ### 2023 season Leipzig Kings folded after week 5 - games @/vs Cologne Centurions score 16-16 counted as W for Cologne
 results <- rows_update(results, tibble(GameID = c("CCLK2307", "LKCC2312"), Team = "Leipzig Kings", Result = "L"), by = c("GameID", "Team"))
