@@ -86,23 +86,23 @@ Week,Kickoff,Guest,Home,Pts_G,Pts_H
 12,2024-08-11 13:00 CET,Barcelona Dragons,Munich Ravens,0,90
 12,2024-08-11 16:25 CET,Panthers Wroclaw,Berlin Thunder,34,36
 12,2024-08-11 16:25 CET,Hamburg Sea Devils,Rhein Fire,2,51
-13,2024-08-17 16:00 CET,Madrid Bravos,Paris Musketeers,,
-13,2024-08-17 18:00 CET,Milano Seamen,Raiders Tirol,,
-13,2024-08-17 18:00 CET,Fehervar Enthroners,Vienna Vikings,,
-13,2024-08-17 18:00 CET,Munich Ravens,Helvetic Mercenaries,,
-13,2024-08-17 13:00 CET,Frankfurt Galaxy,Panthers Wroclaw,,
-13,2024-08-18 13:00 CET,Barcelona Dragons,Stuttgart Surge,,
-13,2024-08-18 16:25 CET,Cologne Centurions,Hamburg Sea Devils,,
-13,2024-08-18 16:25 CET,Berlin Thunder,Rhein Fire,,
-14,2024-08-24 15:00 CET,Cologne Centurions,Fehervar Enthroners,,
-14,2024-08-24 18:00 CET,Stuttgart Surge,Helvetic Mercenaries,,
-14,2024-08-24 18:00 CET,Madrid Bravos,Hamburg Sea Devils,,
-14,2024-08-25 19:00 CET,Barcelona Dragons,Milano Seamen,,
-14,2024-08-25 13:00 CET,Paris Musketeers,Frankfurt Galaxy,,
-14,2024-08-25 13:00 CET,Panthers Wroclaw,Prague Lions,,
-14,2024-08-25 16:25 CET,Raiders Tirol,Munich Ravens,,
-97,2024-08-31 00:00 CET,tbd,tbd,,
-97,2024-09-01 00:00 CET,tbd,tbd,,
+13,2024-08-17 16:00 CET,Madrid Bravos,Paris Musketeers,12,15
+13,2024-08-17 18:00 CET,Milano Seamen,Raiders Tirol,0,30
+13,2024-08-17 18:00 CET,Fehervar Enthroners,Vienna Vikings,0,46
+13,2024-08-17 18:00 CET,Munich Ravens,Helvetic Mercenaries,38,13
+13,2024-08-17 13:00 CET,Frankfurt Galaxy,Panthers Wroclaw,19,54
+13,2024-08-18 13:00 CET,Barcelona Dragons,Stuttgart Surge,0,56
+13,2024-08-18 16:25 CET,Cologne Centurions,Hamburg Sea Devils,30,23
+13,2024-08-18 16:25 CET,Berlin Thunder,Rhein Fire,14,47
+14,2024-08-24 15:00 CET,Cologne Centurions,Fehervar Enthroners,57,28
+14,2024-08-24 18:00 CET,Madrid Bravos,Hamburg Sea Devils,63,13
+14,2024-08-24 18:00 CET,Stuttgart Surge,Helvetic Mercenaries,61,7
+14,2024-08-25 19:00 CET,Barcelona Dragons,Milano Seamen,36,57
+14,2024-08-25 13:00 CET,Paris Musketeers,Frankfurt Galaxy,44,10
+14,2024-08-25 13:00 CET,Panthers Wroclaw,Prague Lions,17,7
+14,2024-08-25 16:25 CET,Raiders Tirol,Munich Ravens,3,30
+97,2024-08-31 15:15 CET,Munich Ravens,Paris Musketeers,,
+97,2024-09-01 00:00 CET,Madrid Bravos,Rhein Fire,,
 98,2024-09-07 00:00 CET,tbd,tbd,,
 98,2024-09-08 00:00 CET,tbd,tbd,,
 99,2024-09-22 15:00 CET,tbd,tbd,,
