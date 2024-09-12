@@ -218,7 +218,7 @@ colors_elf <- list(
                        "Central", "#1e3264", 2022:present,
                        "Northern", "#b4b7fa", 2022,
                        "Southern", "#f6cdcb", 2022,
-                       "Eastern", "#244530" 2023:present,
+                       "Eastern", "#244530", 2023:present,
                        "Western", "#ad302c", 2023: present)
 )
 
