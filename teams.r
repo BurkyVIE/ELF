@@ -212,14 +212,14 @@ teamloc_elf <-
 ## Colors ----
 colors_elf <- list(
   Division = tribble(~Name, ~Color, ~Season,
-                     "North", "#1f3f77", 2021,
-                     "South", "#cd2028", 2021),
+                     "North", "#b4b7fa", 2021,
+                     "South", "#f6cdcb", 2021),
   Conference = tribble(~Name, ~Color, ~Season,
-                       "Central", "#008000", 2022:present,
-                       "Eastern", "#cd2028", 2023,
-                       "Northern", "#1f3f77", 2022,
-                       "Southern", "#cd2028", 2022,
-                       "Western", "#1f3f77", 2023)
+                       "Central", "#1e3264", 2022:present,
+                       "Northern", "#b4b7fa", 2022,
+                       "Southern", "#f6cdcb", 2022,
+                       "Eastern", "#244530" 2023:present,
+                       "Western", "#ad302c", 2023: present)
 )
 
 ## Expandiere ----  
