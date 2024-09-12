@@ -8,18 +8,18 @@ library(ggrepel)
 source("teams.r")
 
 # DATA ----
-seas <- 2023
+seas <- 2024
 
 data <- teamloc_elf %>% filter(Season == seas)
 
-mapdata <- ne_countries(scale = 10, returnclass = "sf")
+mapdata <- ne_countries(scale = 50, returnclass = "sf")
 
 with(data %>% filter(!is.na(Long)), SpatialPoints(cbind(Long, Lat))) %>%
   bbox() -> bbo
 
 # VISUALISE ----
 p <- ggplot() +
-  geom_sf(data = mapdata, fill = "grey60", col = "white", size = 1.25) + #26ab65
+  geom_sf(data = mapdata, fill = "grey90", col = "grey30", size = 1.25) +
   # geom_point(data, mapping = aes(x = Long, y = Lat), color = "red3", size = 4) +
   geom_label_repel(data, mapping = aes(x = Long, y = Lat, label = Franchise, fill = Conference), colour = "white",
                    box.padding = unit(.6, "lines"), point.padding = unit(.4, "lines"), force_pull = .5,
@@ -33,7 +33,9 @@ p <- ggplot() +
   labs(title = "ELF - European League of Football",
        subtitle = paste(seas, "Season")) +
   theme_bw(base_size = 12) +
-  theme(panel.background = element_rect(fill = "#606e8c"))
+  theme(panel.background = element_rect(fill = "#606e8c"),
+        legend.position = "top",
+        legend.key = element_rect(fill="white"))
 
 xRange <- ggplot_build(p)$layout$panel_params[[1]]$x_range %>% diff()
 yRange <- ggplot_build(p)$layout$panel_params[[1]]$y_range %>% diff()
