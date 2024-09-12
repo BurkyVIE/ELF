@@ -48,7 +48,7 @@ base <- filter(results, Week < 30) |> # no PS games
   bind_rows(tibble(Season = c(2022, 2023), Week = c(10L, 10L))) |> # general bye weeks in 2022 and 2023 in W10
   arrange(Season, Week)
 
-# corresponding teams
+# corresponding teams ----
 base <- left_join(base,
                   teaminfo_elf,
                   by = c("Season"),
@@ -60,11 +60,11 @@ data <- left_join(base,
                     mutate(Result = factor(Result, levels = c("W", "L", "T", "bye"))),
                   by = c("Season", "Week", "Team"))
 
-# add bye information
+# add bye information ----
 data <- replace_na(data,
-                   replace = list(PF = 0, PA = 0, Result = "bye")) # 
+                   replace = list(PF = 0, PA = 0, Result = "bye"))
 
-#  ----
+# standings ----
 standings <- mutate(data, one = 1L) |> 
   pivot_wider(names_from = Result, values_from = one, names_expand = TRUE, values_fill = list(one = 0)) |> 
   group_by(Season, Team) |> 
