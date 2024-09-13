@@ -20,6 +20,7 @@ games <- data_raw |>
          GameID = str_replace(GameID, "97", "WC"),
          GameID = str_replace(GameID, "98", "PO"),
          GameID = str_replace(GameID, "99", "FI")) |> 
+  ungroup()  |> 
   relocate(GameID, .after = "Pts_H")
 
 ## results ----
