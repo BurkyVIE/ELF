@@ -275,11 +275,11 @@ colors_elf <- list(
                      "South", "#FFD700", 2025:present,
                      "West", "#FFCBCB", 2025:present),
   Conference = tribble(~Name, ~Color, ~Season,
-                       "Central", "#1e3264", 2022:2024,
+                       "Central", "#CBFFBC", 2022:2024,
                        "Northern", "#b4b7fa", 2022,
                        "Southern", "#f6cdcb", 2022,
-                       "Eastern", "#244530", 2023:2024,
-                       "Western", "#ad302c", 2023: 2024)
+                       "Eastern", "#FFCBCB", 2023:2024,
+                       "Western", "#B3B7FF", 2023:2024)
 )
 
 ## Expandiere ----  
