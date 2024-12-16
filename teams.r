@@ -270,16 +270,16 @@ colors_elf <- list(
   Division = tribble(~Name, ~Color, ~Season,
                      "North", "#b4b7fa", 2021,
                      "South", "#f6cdcb", 2021,
-                     "North", "#B3B7FF", 2025,
-                     "East", "#B3FFB7", 2025,
-                     "South", "#FFD700", 2025,
-                     "West", "#FFCBCB", 2025),
+                     "North", "#B3B7FF", 2025:present,
+                     "East", "#B3FFB7", 2025:present,
+                     "South", "#FFD700", 2025:present,
+                     "West", "#FFCBCB", 2025:present),
   Conference = tribble(~Name, ~Color, ~Season,
-                       "Central", "#1e3264", 2022:present,
+                       "Central", "#1e3264", 2022:2024,
                        "Northern", "#b4b7fa", 2022,
                        "Southern", "#f6cdcb", 2022,
-                       "Eastern", "#244530", 2023:present,
-                       "Western", "#ad302c", 2023: present)
+                       "Eastern", "#244530", 2023:2024,
+                       "Western", "#ad302c", 2023: 2024)
 )
 
 ## Expandiere ----  
