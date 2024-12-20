@@ -8,11 +8,11 @@ library(ggrepel)
 source("teams.r")
 
 # DATA ----
-seas <- 2021; kind <- "Division"; textcol <- "black"
-seas <- 2022; kind <- "Conference"; textcol <- "black"
-seas <- 2023; kind <- "Conference"; textcol <- "black"
-seas <- 2024; kind <- "Conference"; textcol <- "black"
-seas <- 2025; kind <- "Division"; textcol <- "black"
+# seas <- 2021; kind <- "Division"; textcol <- "black"
+# seas <- 2022; kind <- "Conference"; textcol <- "grey50"
+# seas <- 2023; kind <- "Conference"; textcol <- "white"
+# seas <- 2024; kind <- "Conference"; textcol <- "white"
+seas <- 2025; kind <- "Division"; textcol <- "white"
 
 
 # data <- teamloc_elf %>% filter(Season == seas)
