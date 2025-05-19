@@ -7,7 +7,7 @@ import <- function(df) {
   dat <- df |> 
     mutate(Data = map(.x = file,
                       .f = ~ read_csv(.,
-                                      lazy = FALSE,
+                                      lazy = FALSE, comment = "#",
                                       col_types = cols(Week = col_integer(),
                                                        Kickoff = col_character(),
                                                        Home = col_character(),
