@@ -1,54 +1,54 @@
 Week,Kickoff,Guest,Home,Pts_G,Pts_H
-1,2025-05-17 00:00 CET,Hamburg Sea Devils,Madrid Bravos,12,13
-1,2025-05-17 00:00 CET,Fehervar Enthroners,Panthers Wroclaw,12,55
-1,2025-05-17 00:00 CET,Rhein Fire,Paris Musketeers,17,15
-1,2025-05-18 00:00 CET,Cologne Centurions,Berlin Thunder,14,63
-1,2025-05-18 00:00 CET,Frankfurt Galaxy,Stuttgart Surge,20,33
-1,2025-05-18 00:00 CET,Raiders Tirol,Munich Ravens,7,20
-1,2025-05-18 00:00 CET,Vienna Vikings,Prague Lions,28,6
-1,2025-05-18 00:00 CET,Nordic Storm,Helvetic Mercenaries,56,12
-#2,2025-05-24 00:00 CET,Frankfurt Galaxy,Madrid Bravos,,
-#2,2025-05-24 00:00 CET,Fehervar Enthroners,Vienna Vikings,,
-#2,2025-05-25 00:00 CET,Nordic Storm,Panthers Wroclaw ,,
-#2,2025-05-25 00:00 CET,Helvetic Mercenaries,Raiders Tirol,,
-#2,2025-05-25 00:00 CET,Berlin Thunder,Munich Ravens,,
-#2,2025-05-25 00:00 CET,Stuttgart Surge,Paris Musketeers,,
-#2,2025-05-25 00:00 CET,Hamburg Sea Devils,Prague Lions,,
-#3,2025-05-31 00:00 CTE,Madrid Bravos vs. Helvetic Mercenaries (Sat.)
-#3,2025-05-31 00:00 CTE,Cologne Centurions vs. Raiders Tirol (Sat.)
-#3,2025-05-31 00:00 CTE,Fehervar Enthroners vs. Prague Lions (Sat.)
-#3,2025-06-01 00:00 CTE,Hamburg Sea Devils vs. Stuttgart Surge (Sun.)
-#3,2025-06-01 00:00 CTE,Frankfurt Galaxy vs. Paris Musketeers (Sun.)
-#3,2025-06-01 00:00 CTE,Nordic Storm vs. Berlin Thunder (Sun.)
-#3,2025-06-01 00:00 CTE,Rhein Fire vs. Vienna Vikings (Sun.)
-#4,2025-06-07 00:00 CET,Berlin Thunder,Hamburg Sea Devils,,
-#4,2025-06-07 00:00 CET,Raiders Tirol,Vienna Vikings,,
-#4,2025-06-07 00:00 CET,Madrid Bravos,Fehervar Enthroners,,
-#4,2025-06-08 00:00 CET,Prague Lions,Panthers Wroclaw,,
-#4,2025-06-08 00:00 CET,Cologne Centurions,Frankfurt Galaxy,,
-#4,2025-06-08 00:00 CET,Munich Ravens,Stuttgart Surge,,
-#4,2025-06-08 00:00 CET,Paris Musketeers,Rhein Fire,,
-#5,2025-06-14 00:00 CET,Hamburg Sea Devils,Rhein Fire,,
-#5,2025-06-14 00:00 CET,Panthers Wroclaw,Cologne Centurions,,
-#5,2025-06-15 00:00 CET,Fehervar Enthroners,Berlin Thunder,,
-#5,2025-06-15 00:00 CET,Madrid Bravos,Raiders Tirol,,
-#5,2025-06-15 00:00 CET,Frankfurt Galaxy,Nordic Storm,,
-#5,2025-06-15 00:00 CET,Helvetic Mercenaries,Munich Ravens,,
-#6,2025-06-21 00:00 CET,Rhein Fire,Vienna Vikings,,
-#6,2025-06-21 00:00 CET,Raiders Tirol,Helvetic Mercenaries,,
-#6,2025-06-22 00:00 CET,Munich Ravens,Berlin Thunder,,
-#6,2025-06-22 00:00 CET,Prague Lions,Hamburg Sea Devils,,
-#6,2025-06-22 00:00 CET,Cologne Centurions,Stuttgart Surge,,
-#6,2025-06-22 00:00 CET,Panthers Wroclaw,Nordic Storm,,
-#6,2025-06-22 00:00 CET,Frankfurt Galaxy,Paris Musketeers,,
-#7,2025-06-28 00:00 CET,Madrid Bravos,Hamburg Sea Devils,,
-#7,2025-06-28 00:00 CET,Helvetic Mercenaries,Nordic Storm,,
-#7,2025-06-28 00:00 CET,Panthers Wroclaw,Fehervar Enthroners,,
-#7,2025-06-29 00:00 CET,Rhein Fire,Berlin Thunder,,
-#7,2025-06-29 00:00 CET,Prague Lions,Frankfurt Galaxy,,
-#7,2025-06-29 00:00 CET,Vienna Vikings,Raiders Tirol,,
-#7,2025-06-29 00:00 CET,Stuttgart Surge,Munich Ravens,,
-#7,2025-06-29 00:00 CET,Paris Musketeers,Cologne Centurions,,
+1,2025-05-17 18:00 CET,Fehervar Enthroners,Panthers Wroclaw,12,55
+1,2025-05-17 18:00 CET,Rhein Fire,Paris Musketeers,17,15
+1,2025-05-17 20:00 CET,Hamburg Sea Devils,Madrid Bravos,12,13
+1,2025-05-18 13:00 CET,Nordic Storm,Helvetic Mercenaries,56,12
+1,2025-05-18 13:00 CET,Cologne Centurions,Berlin Thunder,14,63
+1,2025-05-18 13:00 CET,Raiders Tirol,Munich Ravens,7,20
+1,2025-05-18 16:25 CET,Vienna Vikings,Prague Lions,28,6
+1,2025-05-18 16:25 CET,Frankfurt Galaxy,Stuttgart Surge,20,33
+2,2025-05-24 18:00 CET,Fehervar Enthroners,Vienna Vikings,,
+2,2025-05-24 18:00 CET,Hamburg Sea Devils,Prague Lions,,
+2,2025-05-24 20:00 CET,Frankfurt Galaxy,Madrid Bravos,,
+2,2025-05-25 13:00 CET,Nordic Storm,Panthers Wroclaw ,,
+2,2025-05-25 13:00 CET,Stuttgart Surge,Paris Musketeers,,
+2,2025-05-25 16:25 CET,Berlin Thunder,Munich Ravens,,
+2,2025-05-25 16:25 CET,Helvetic Mercenaries,Raiders Tirol,,
+3,2025-05-31 15:00 CET,Prague Lions,Fehervar Enthroners,,
+3,2025-05-31 18:00 CET,Stuttgart Surge,Hamburg Sea Devils,,
+3,2025-05-31 18:00 CET,Raiders Tirol,Cologne Centurions,,
+3,2025-05-31 20:00 CET,Helvetic Mercenaries,Madrid Bravovs,,
+3,2025-06-01 13:00 CET,Paris Musketeers,Frankfurt Galaxy,,
+3,2025-06-01 13:00 CET,Berlin Thunder,Nordic Storm,,
+3,2025-06-01 16:25 CET,Vienna Vikings,Rhein Fire,,
+4,2025-06-07 18:00 CET,Berlin Thunder,Hamburg Sea Devils,,
+4,2025-06-07 18:00 CET,Raiders Tirol,Vienna Vikings,,
+4,2025-06-07 19:00 CET,Madrid Bravos,Fehervar Enthroners,,
+4,2025-06-08 13:00 CET,Prague Lions,Panthers Wroclaw,,
+4,2025-06-08 13:00 CET,Paris Musketeers,Rhein Fire,,
+4,2025-06-08 16:25 CET,Cologne Centurions,Frankfurt Galaxy,,
+4,2025-06-08 16:25 CET,Munich Ravens,Stuttgart Surge,,
+5,2025-06-14 18:00 CET,Panthers Wroclaw,Cologne Centurions,,
+5,2025-06-14 18:00 CET,Hamburg Sea Devils,Rhein Fire,,
+5,2025-06-15 13:00 CET,Fehervar Enthroners,Berlin Thunder,,
+5,2025-06-15 13:00 CET,Frankfurt Galaxy,Nordic Storm,,
+5,2025-06-15 16:25 CET,Helvetic Mercenaries,Munich Ravens,,
+5,2025-06-15 16:25 CET,Madrid Bravos,Raiders Tirol,,
+6,2025-06-21 13:00 CET,Raiders Tirol,Helvetic Mercenaries,,
+6,2025-06-21 18:00 CET,Panthers Wroclaw,Nordic Storm,,
+6,2025-06-21 18:00 CET,Rhein Fire,Vienna Vikings,,
+6,2025-06-22 13:00 CET,Frankfurt Galaxy,Paris Musketeers,,
+6,2025-06-22 13:00 CET,Prague Lions,Hamburg Sea Devils,,
+6,2025-06-22 16:25 CET,Munich Ravens,Berlin Thunder,,
+6,2025-06-22 16:25 CET,Cologne Centurions,Stuttgart Surge,,
+7,2025-06-28 15:00 CET,Panthers Wroclaw,Fehervar Enthroners,,
+7,2025-06-28 18:00 CET,Madrid Bravos,Hamburg Sea Devils,,
+7,2025-06-28 18:00 CET,Helvetic Mercenaries,Nordic Storm,,
+7,2025-06-29 13:00 CET,Rhein Fire,Berlin Thunder,,
+7,2025-06-29 13:00 CET,Prague Lions,Frankfurt Galaxy,,
+7,2025-06-29 16:25 CET,Vienna Vikings,Raiders Tirol,,
+7,2025-06-29 16:25 CET,Paris Musketeers,Cologne Centurions,,
+7,2025-06-29 16:25 CET,Stuttgart Surge,Munich Ravens,,
 #8,2025-07-05 00:00 CET,Munich Ravens,Madrid Bravos,,
 #8,2025-07-05 00:00 CET,Rhein Fire,Raiders Tirol,,
 #8,2025-07-05 00:00 CET,Prague Lions,Vienna Vikings,,
