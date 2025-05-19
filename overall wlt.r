@@ -9,6 +9,7 @@ results |>
   group_by(Franchise) |> 
   summarise(Results = list(Result), .groups = "drop",
             Gs = n(),
+            Last_active = last(Season),
             PFc = sum(PF),
             PAc = sum(PA)) |> 
   mutate(map_df(Results, ~unlist(.) %>% table(.)),
@@ -25,10 +26,11 @@ print(res)
 
 # plot ----
   ggplot(data = res) +
-  aes(x = WRat, y = Pyt) +
+  aes(x = WRat, y = Pyt, color = Last_active) +
   geom_abline(slope = , intercept = 0, linetype = "dashed") +
   geom_point(size = 2) +
-  ggrepel::geom_label_repel(mapping = aes(label = Franchise, fill = Delta * 10)) +
+  ggrepel::geom_label_repel(mapping = aes(label = Franchise, fill = Delta * 10), show.legend = FALSE) +
+  scale_color_distiller(palette = "Greys", direction = 1) +
   scale_x_continuous(name = "True Win Ratio") +
   scale_y_continuous(name = "Expectetd Win Ratio (Pythagorean)") +
   scale_fill_distiller(name = "Overwinning\nper 10 Games", palette = "RdYlGn", direction = 1, values = scales::rescale(c(range(res$Delta), 0)[c(1, 3, 2)])) +
