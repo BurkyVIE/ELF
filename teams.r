@@ -283,18 +283,18 @@ teamloc_elf <-
 ## Colors ---- by elpedia.eu/ELF_Divisions
 colors_elf <- list(
   Division = tribble(~Name, ~Color, ~Season,
-                     "North", "#b4b7fa", 2021,
-                     "South", "#f6cdcb", 2021,
-                     "East", "#244530", 2025:present,
-                     "North", "#8b3b16", 2025:present,
-                     "South", "#2f0491", 2025:present,
-                     "West", "#ad302c", 2025:present),
+                     "North", "#1f3f77", 2021,
+                     "South", "#cd2028", 2021,
+                     "East", "#dfdf39", 2025:present,
+                     "North", "#1f3f77", 2025:present,
+                     "South", "#ac162c", 2025:present,
+                     "West", "#005030", 2025:present),
   Conference = tribble(~Name, ~Color, ~Season,
-                       "Central", "#1e3264", 2022:2024,
-                       "Northern", "#b4b7fa", 2022,
-                       "Southern", "#f6cdcb", 2022,
-                       "Eastern", "#244530", 2023:2024,
-                       "Western", "#ad302c", 2023:2024)
+                       "Central", "#008000", 2022:2024,
+                       "Northern", "#1f3f77", 2022,
+                       "Southern", "#cd2028", 2022,
+                       "Eastern", "#cd2028", 2023:2024,
+                       "Western", "#1f3f77", 2023:2024)
 )
 
 ## Expandiere ----  
