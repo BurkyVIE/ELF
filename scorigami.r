@@ -17,7 +17,8 @@ results %>% filter(Result == "W" | (Result == "T" & Home)) %>% #Winners or Home 
        title = "ELF Scorigami",
        subtitle = "Alltime ELF Scores, Regular and Playoff Games") +
   theme_bw(base_size = 13) +
-  theme(panel.background = element_rect(fill = "seagreen", colour = NA)) -> p
+  theme(panel.background = element_rect(fill = "lightgreen", colour = NA),
+        panel.grid = element_line(color = "white", linewidth = 1.5)) -> p
 
 #Plot
 windows(16, 9)
