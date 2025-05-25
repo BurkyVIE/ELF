@@ -12,8 +12,8 @@ Week,Kickoff,Guest,Home,Pts_G,Pts_H
 2,2025-05-24 20:00 CET,Frankfurt Galaxy,Madrid Bravos,47,33
 2,2025-05-25 13:00 CET,Nordic Storm,Panthers Wroclaw,40,21
 2,2025-05-25 13:00 CET,Stuttgart Surge,Paris Musketeers,0,6
-2,2025-05-25 16:25 CET,Berlin Thunder,Munich Ravens,,
-2,2025-05-25 16:25 CET,Helvetic Mercenaries,Raiders Tirol,,
+2,2025-05-25 16:25 CET,Berlin Thunder,Munich Ravens,16,38
+2,2025-05-25 16:25 CET,Helvetic Mercenaries,Raiders Tirol,6,44
 3,2025-05-31 15:00 CET,Prague Lions,Fehervar Enthroners,,
 3,2025-05-31 18:00 CET,Stuttgart Surge,Hamburg Sea Devils,,
 3,2025-05-31 18:00 CET,Raiders Tirol,Cologne Centurions,,
