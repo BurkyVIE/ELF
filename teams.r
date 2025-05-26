@@ -238,7 +238,7 @@ teamdata_elf <- tribble(~Franchise, ~Team, ~Conference, ~Division, ~HomeField,
                                 "Footballzentrum Ravelinstraße", "Vienna, AT", 1/6, 48.172145848736214, 16.425254712887714, 2023,
                                 "Generali Arena", "Vienna, AT", 3/6, 48.162345, 16.387156, 2024,
                                 "Wiener Neustadt Arena", "Wr. Neustadt, AT", 3/6, 47.840926, 16.257464, 2024,
-                                "Naturarena Hohe Warte", "Vienna, AT", 2/6, 48.248898, 16.359694, 2023,
+                                "Naturarena Hohe Warte", "Vienna, AT", 2/6, 48.248898, 16.359694, 2025,
                                 "Generali Arena", "Vienna, AT", 2/6, 48.162345, 16.387156, 2025,
                                 "Wiener Neustadt Arena", "Wr. Neustadt, AT", 1/6, 47.840926, 16.257464, 2025,
                                 "Bundesstadion Südstadt", "Maria Enzersdorf, AT", 1/6, 48.097593, 16.310936, 2025)
