@@ -16,7 +16,7 @@ games <- data_raw |>
   left_join(teaminfo_elf, by = c("Home" = "Team", "Season")) |> 
   nest(Homedata = Franchise:Division) |>
   rowwise() |> # rowwise wg Season und Week
-  mutate(GameID = paste0(Homedata$Abb, Guestdata$Abb, Season%%100, sprintf("%02d", Week)), # generate GameID
+  mutate(GameID = paste0(Homedata$Abb2, Guestdata$Abb2, Season%%100, sprintf("%02d", Week)), # generate GameID
          GameID = str_replace(GameID, "97", "WC"),
          GameID = str_replace(GameID, "98", "PO"),
          GameID = str_replace(GameID, "99", "FI")) |> 
@@ -75,7 +75,7 @@ standings <- mutate(data, one = 1L) |>
                          TRUE ~ paste0("(", W, "-", L, "-", T, ")")),
          Pct = num((W + 1/2 * T) / (W + L + T), digits = 3),
          bye = bye == 1) |> 
-  select(!c(Abb, W:T)) |>
+  select(!c(Abb2, Abb3, W:T)) |>
   relocate(bye, .after = Week) |> 
   arrange(Season, Franchise, Week)
 
