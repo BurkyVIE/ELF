@@ -40,7 +40,9 @@ print(res)
   coord_fixed(xlim = c(0, 1), ylim = c(0, 1)) +
   theme_dark() +
   theme(legend.position = "bottom",
-        legend.key.width = unit(50, "points")) -> p
+        legend.key.width = unit(50, "points")) +
+  theme(panel.background = element_rect(fill = "lightgreen", colour = NA),
+        panel.grid = element_line(color = "white")) -> p
 
 windows(9, 9)
 plot(p)
