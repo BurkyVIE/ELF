@@ -42,6 +42,7 @@ print(res)
   theme(legend.position = "bottom",
         legend.key.width = unit(50, "points")) -> p
 
+windows(9, 9)
 plot(p)
 
 # clean up ----
