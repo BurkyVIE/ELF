@@ -28,12 +28,12 @@ Week,Kickoff,Guest,Home,Pts_G,Pts_H
 4,2025-06-08 13:00 CET,Paris Musketeers,Rhein Fire,31,7
 4,2025-06-08 16:25 CET,Cologne Centurions,Frankfurt Galaxy,15,47
 4,2025-06-08 16:25 CET,Munich Ravens,Stuttgart Surge,28,36
-#5,2025-06-14 18:00 CET,Panthers Wroclaw,Cologne Centurions,,
-#5,2025-06-14 18:00 CET,Hamburg Sea Devils,Rhein Fire,,
-#5,2025-06-15 13:00 CET,Fehervar Enthroners,Berlin Thunder,,
-#5,2025-06-15 13:00 CET,Frankfurt Galaxy,Nordic Storm,,
-#5,2025-06-15 16:25 CET,Helvetic Mercenaries,Munich Ravens,,
-#5,2025-06-15 16:25 CET,Madrid Bravos,Raiders Tirol,,
+5,2025-06-14 18:00 CET,Panthers Wroclaw,Cologne Centurions,57,3
+5,2025-06-14 18:00 CET,Hamburg Sea Devils,Rhein Fire,0,43
+5,2025-06-15 13:00 CET,Fehervar Enthroners,Berlin Thunder,21,38
+5,2025-06-15 13:00 CET,Frankfurt Galaxy,Nordic Storm,0,35
+5,2025-06-15 16:25 CET,Madrid Bravos,Raiders Tirol,34,35
+5,2025-06-15 16:25 CET,Helvetic Mercenaries,Munich Ravens,14,58
 #6,2025-06-21 13:00 CET,Raiders Tirol,Helvetic Mercenaries,,
 #6,2025-06-21 18:00 CET,Panthers Wroclaw,Nordic Storm,,
 #6,2025-06-21 18:00 CET,Rhein Fire,Vienna Vikings,,
