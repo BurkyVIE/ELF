@@ -31,7 +31,7 @@ print(res)
   geom_abline(slope = , intercept = 0, linetype = "dashed") +
   geom_point(size = 2, show.legend = FALSE) +
   ggrepel::geom_label_repel(mapping = aes(label = Franchise, fill = Delta * 10)) +
-  scale_color_manual(values = c("grey40", "black"), guide = "none") +
+  scale_color_manual(values = c("grey50", "black"), guide = "none") +
   scale_x_continuous(name = "True Win Ratio") +
   scale_y_continuous(name = "Expectetd Win Ratio (Pythagorean)") +
   scale_fill_distiller(name = "Overwinning\nper 10 Games", palette = "RdYlGn", direction = 1, values = scales::rescale(c(range(res$Delta), 0)[c(1, 3, 2)])) +
