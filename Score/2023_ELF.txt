@@ -1,0 +1,101 @@
+Week,Kickoff,Guest,Home,Pts_G,Pts_H
+1,2023-06-03 17:00 CET,Berlin Thunder,Fehervar Enthroners,36,3
+1,2023-06-03 17:00 CET,Hamburg Sea Devils,Panthers Wroclaw,25,34
+1,2023-06-03 17:00 CET,Paris Musketeers,Cologne Centurions,24,17
+1,2023-06-03 19:00 CET,Helvetic Guards,Barcelona Dragons,17,29
+1,2023-06-04 13:00 CET,Raiders Tirol,Munich Ravens,59,38
+1,2023-06-04 16:25 CET,Frankfurt Galaxy,Rhein Fire,9,33
+1,2023-06-04 16:25 CET,Leipzig Kings,Prague Lions,18,15
+2,2023-06-10 17:00 CET,Cologne Centurions,Prague Lions,23,14
+2,2023-06-10 17:00 CET,Frankfurt Galaxy,Fehervar Enthroners,48,13
+2,2023-06-10 17:00 CET,Stuttgart Surge,Paris Musketeers,29,20
+2,2023-06-10 19:00 CET,Barcelona Dragons,Milano Seamen,41,33
+2,2023-06-11 13:00 CET,Vienna Vikings,Berlin Thunder,27,24
+2,2023-06-11 16:25 CET,Panthers Wroclaw,Leipzig Kings,31,6
+2,2023-06-11 16:25 CET,Raiders Tirol,Helvetic Guards,22,7
+2,2023-06-11 16:25 CET,Rhein Fire,Hamburg Sea Devils,27,22
+3,2023-06-17 17:00 CET,Hamburg Sea Devils,Cologne Centurions,34,17
+3,2023-06-17 18:00 CET,Prague Lions,Vienna Vikings,21,69
+3,2023-06-17 18:00 CET,Barcelona Dragons,Raiders Tirol,13,29
+3,2023-06-17 18:00 CET,Fehervar Enthroners,Leipzig Kings,24,47
+3,2023-06-18 13:00 CET,Milano Seamen,Stuttgart Surge,26,40
+3,2023-06-18 13:00 CET,Munich Ravens,Helvetic Guards,39,10
+3,2023-06-18 16:25 CET,Paris Musketeers,Rhein Fire,28,58
+3,2023-06-18 16:25 CET,Panthers Wroclaw,Berlin Thunder,27,36
+4,2023-06-24 17:00 CET,Fehervar Enthroners,Panthers Wroclaw,33,63
+4,2023-06-24 18:00 CET,Paris Musketeers,Frankfurt Galaxy,13,30
+4,2023-06-24 18:00 CET,Leipzig Kings,Vienna Vikings,14,47
+4,2023-06-24 19:00 CET,Munich Ravens,Barcelona Dragons,39,15
+4,2023-06-25 13:00 CET,Helvetic Guards,Milano Seamen,0,32
+4,2023-06-25 13:00 CET,Raiders Tirol,Stuttgart Surge,3,6
+4,2023-06-25 16:25 CET,Rhein Fire,Cologne Centurions,42,0
+4,2023-06-25 16:25 CET,Berlin Thunder,Hamburg Sea Devils,17,37
+5,2023-07-01 14:30 CET,Helvetic Guards,Rhein Fire,0,51
+5,2023-07-01 14:30 CET,Cologne Centurions,Frankfurt Galaxy,22,33
+5,2023-07-01 16:00 CET,Hamburg Sea Devils,Paris Musketeers,23,27
+5,2023-07-02 14:30 CET,Stuttgart Surge,Munich Ravens,28,9
+5,2023-07-02 14:30 CET,Berlin Thunder,Leipzig Kings,39,14
+5,2023-07-02 16:25 CET,Vienna Vikings,Fehervar Enthroners,41,12
+5,2023-07-02 16:25 CET,Milano Seamen,Raiders Tirol,13,38
+5,2023-07-02 16:25 CET,Prague Lions,Panthers Wroclaw,23,29
+6,2023-07-08 19:00 CET,Frankfurt Galaxy,Milano Seamen,40,33
+6,2023-07-09 13:00 CET,Panthers Wroclaw,Hamburg Sea Devils,10,17
+6,2023-07-09 13:00 CET,Fehervar Enthroners,Berlin Thunder,6,60
+6,2023-07-09 13:00 CET,Barcelona Dragons,Helvetic Guards,19,22
+6,2023-07-09 16:25 CET,Paris Musketeers,Stuttgart Surge,6,14
+6,2023-07-09 16:25 CET,Munich Ravens,Rhein Fire,25,39
+6,2023-07-09 16:25 CET,Vienna Vikings,Raiders Tirol,34,13
+7,2023-07-15 18:00 CET,Panthers Wroclaw,Vienna Vikings,21,24
+7,2023-07-15 19:00 CET,Raiders Tirol,Barcelona Dragons,17,3
+7,2023-07-16 13:00 CET,Berlin Thunder,Prague Lions,43,6
+7,2023-07-16 13:00 CET,Milano Seamen,Munich Ravens,37,56
+7,2023-07-16 16:25 CET,Hamburg Sea Devils,Frankfurt Galaxy,14,17
+7,2023-07-16 16:25 CET,Stuttgart Surge,Helvetic Guards,13,31
+7,2023-07-16 16:25 CET,Rhein Fire,Paris Musketeers,37,25
+8,2023-07-22 18:00 CET,Munich Ravens,Raiders Tirol,24,25
+8,2023-07-22 18:00 CET,Berlin Thunder,Vienna Vikings,9,16
+8,2023-07-23 13:00 CET,Milano Seamen,Helvetic Guards,24,31
+8,2023-07-23 13:00 CET,Barcelona Dragons,Stuttgart Surge,14,33
+8,2023-07-23 16:25 CET,Cologne Centurions,Rhein Fire,3,62
+8,NA,Prague Lions,Fehervar Enthroners,0,35
+8,2023-07-23 16:25 CET,Frankfurt Galaxy,Paris Musketeers,23,21
+9,2023-07-29 17:00 CET,Panthers Wroclaw,Prague Lions,73,13
+9,2023-07-29 19:00 CET,Paris Musketeers,Barcelona Dragons,37,6
+9,2023-07-29 19:00 CET,Stuttgart Surge,Milano Seamen,78,27
+9,2023-07-30 13:00 CET,Fehervar Enthroners,Frankfurt Galaxy,0,46
+9,2023-07-30 16:25 CET,Cologne Centurions,Hamburg Sea Devils,14,18
+9,2023-07-30 16:25 CET,Helvetic Guards,Munich Ravens,6,35
+11,2023-08-12 17:00 CET,Frankfurt Galaxy,Cologne Centurions,22,9
+11,2023-08-12 18:00 CET,Helvetic Guards,Raiders Tirol,14,24
+11,2023-08-12 19:00 CET,Milano Seamen,Barcelona Dragons,33,28
+11,2023-08-13 13:00 CET,Munich Ravens,Stuttgart Surge,32,30
+11,2023-08-13 13:00 CET,Vienna Vikings,Panthers Wroclaw,20,16
+11,2023-08-13 16:25 CET,Hamburg Sea Devils,Rhein Fire,9,40
+11,2023-08-13 16:25 CET,Prague Lions,Berlin Thunder,7,40
+12,2023-08-19 17:00 CET,Fehervar Enthroners,Prague Lions,19,3
+12,2023-08-20 17:00 CET,Berlin Thunder,Panthers Wroclaw,12,15
+12,2023-08-19 18:00 CET,Raiders Tirol,Vienna Vikings,7,13
+12,2023-08-19 19:00 CET,Stuttgart Surge,Barcelona Dragons,31,22
+12,2023-08-20 13:00 CET,Milano Seamen,Frankfurt Galaxy,14,53
+12,2023-08-20 13:00 CET,Paris Musketeers,Hamburg Sea Devils,29,19
+12,2023-08-20 16:25 CET,Rhein Fire,Munich Ravens,60,23
+13,2023-08-26 18:00 CET,Stuttgart Surge,Raiders Tirol,38,28
+13,2023-08-26 18:00 CET,Fehervar Enthroners,Vienna Vikings,20,21
+13,2023-08-26 19:00 CET,Munich Ravens,Milano Seamen,50,29
+13,2023-08-27 13:00 CET,Barcelona Dragons,Paris Musketeers,9,50
+13,2023-08-27 13:00 CET,Prague Lions,Cologne Centurions,9,37
+13,2023-08-27 13:00 CET,Rhein Fire,Helvetic Guards,43,17
+13,2023-08-27 16:25 CET,Frankfurt Galaxy,Hamburg Sea Devils,23,13
+14,2023-09-02 16:00 CET,Vienna Vikings,Prague Lions,55,9
+14,2023-09-02 19:00 CET,Raiders Tirol,Milano Seamen,42,27
+14,2023-09-03 13:00 CET,Cologne Centurions,Paris Musketeers,12,40
+14,2023-09-03 13:00 CET,Barcelona Dragons,Munich Ravens,0,55
+14,2023-09-03 13:00 CET,Hamburg Sea Devils,Berlin Thunder,16,23
+14,2023-09-03 16:25 CET,Rhein Fire,Frankfurt Galaxy,48,38
+14,2023-09-03 16:25 CET,Helvetic Guards,Stuttgart Surge,19,47
+14,2023-09-03 16:25 CET,Panthers Wroclaw,Fehervar Enthroners,35,6
+97,2023-09-09 15:15 CET,Berlin Thunder,Frankfurt Galaxy,3,20
+97,2023-09-10 14:15 CET,Panthers Wroclaw,Stuttgart Surge,14,37
+98,2023-10-16 14:15 CET,Stuttgart Surge,Vienna Vikings,40,33
+98,2023-10-17 14:15 CET,Frankfurt Galaxy,Rhein Fire,23,42
+99,2023-10-24 15:30 CET,Stuttgart Surge,Rhein Fire,34,53

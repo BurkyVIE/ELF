@@ -1,0 +1,8 @@
+Week,Kickoff,Guest,Home,Pts_G,Pts_H
+6,NA,Prague Lions,Leipzig Kings,35,0
+7,NA,Leipzig Kings,Cologne Centurions,16,16
+8,NA,Leipzig Kings,Panthers Wroclaw,6,31
+9,NA,Vienna Vikings,Leipzig Kings,47,14
+11,NA,Leipzig Kings,Fehervar Enthroners,24,47
+12,NA,Cologne Centurions,Leipzig Kings,16,16
+13,NA,Leipzig Kings,Berlin Thunder,14,39
