@@ -48,7 +48,6 @@ Week,Kickoff,Guest,Home,Pts_G,Pts_H
 7,2025-06-29 16:25 CET,Vienna Vikings,Raiders Tirol,44,38
 7,2025-06-29 16:25 CET,Paris Musketeers,Cologne Centurions,62,0
 7,2025-06-29 16:25 CET,Stuttgart Surge,Munich Ravens,33,36
-#7,POSTPONED,Helvetic Mercenaries,Nordic Storm,,
 8,2025-07-05 18:00 CET,Rhein Fire,Raiders Tirol,18,35
 8,2025-07-05 18:00 CET,Prague Lions,Vienna Vikings,0,34
 8,2025-07-05 20:00 CET,Munich Ravens,Madrid Bravos,43,40
