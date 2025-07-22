@@ -1,2 +1,0 @@
-Week,Kickoff,Guest,Home,Pts_G,Pts_H
-7,NA,Helvetic Mercenaries,Nordic Storm,0,35
