@@ -96,6 +96,6 @@ Week,Kickoff,Guest,Home,Pts_G,Pts_H
 14,2025-08-17 16:25 CET,Nordic Storm,Rhein Fire,19,27
 #97,2025-08-23 15:00 CET,Madrid Bravos,Stuttgart Surge,,
 #97,2025-08-24 15:00 CET,Rhein Fire,Nordic Storm,,
-#98,2025-08-30 15:00 CET,tbd,Munich Ravens,,
-#98,2025-08-31 15:00 CET,tbd,Vienna Vikings,,
+#98,2025-08-30 15:00 CET,tbd,Vienna Vikings,,
+#98,2025-08-31 15:00 CET,tbd,Munich Ravens,,
 #99,2025-09-07 15:00 CET,tbd
