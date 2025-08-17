@@ -86,16 +86,16 @@ Week,Kickoff,Guest,Home,Pts_G,Pts_H
 13,2025-08-10 13:00 CET,Hamburg Sea Devils,Nordic Storm,7,40
 13,2025-08-10 13:00 CET,Frankfurt Galaxy,Prague Lions,28,21
 13,2025-08-10 16:25 CET,Raiders Tirol,Rhein Fire,24,34
-#14,2025-08-16 15:00 CET,Stuttgart Surge,Fehervar Enthroners,,
-#14,2025-08-16 18:00 CET,Paris Musketeers,Vienna Vikings,,
-#14,2025-08-16 18:00 CET,Munich Ravens,Panthers Wroclaw,,
-#14,2025-08-17 13:00 CET,Hamburg Sea Devils,Berlin Thunder,,
-#14,2025-08-17 13:00 CET,Madrid Bravos,Frankfurt Galaxy,,
-#14,2025-08-17 13:00 CET,Helvetic Mercenaries,Prague Lions,,
-#14,2025-08-17 16:25 CET,Cologne Centurions,Raiders Tirol,,
-#14,2025-08-17 16:25 CET,Nordic Storm, Rhein Fire,,
-#97,2025-08-23 xx:xx CET,tbd,tbd,,
-#97,2025-08-24 xx:xx CET,tbd,tbd,,
-#98,2025-08-30 xx:xx CET,tbd,tbd,,
-#98,2025-08-31 xx:xx CET,tbd,tbd,,
-#99,2025-09-07 15:00 CET,tbd,tbd,,
+14,2025-08-16 15:00 CET,Stuttgart Surge,Fehervar Enthroners,47,20
+14,2025-08-16 18:00 CET,Paris Musketeers,Vienna Vikings,29,35
+14,2025-08-16 18:00 CET,Munich Ravens,Panthers Wroclaw,49,26
+14,2025-08-17 13:00 CET,Hamburg Sea Devils,Berlin Thunder,56,44
+14,2025-08-17 13:00 CET,Madrid Bravos,Frankfurt Galaxy,47,32
+14,2025-08-17 13:00 CET,Helvetic Mercenaries,Prague Lions,12,69
+14,2025-08-17 16:25 CET,Cologne Centurions,Raiders Tirol,6,63
+14,2025-08-17 16:25 CET,Nordic Storm,Rhein Fire,19,27
+#97,2025-08-23 15:00 CET,Madrid Bravos,Stuttgart Surge,,
+#97,2025-08-24 15:00 CET,Rhein Fire,Nordic Storm,,
+#98,2025-08-30 15:00 CET,tbd,Munich Ravens,,
+#98,2025-08-31 15:00 CET,tbd,Vienna Vikings,,
+#99,2025-09-07 15:00 CET,tbd
