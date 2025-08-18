@@ -12,18 +12,19 @@ dat <- filter(teaminfo_elf, Franchise == selection) |>
          Div = paste(Division, "Div."),
          ConfDiv = case_when(is.na(Conference) ~ Div,
                              is.na(Division) ~ Conf,
-                             TRUE ~ paste(Conf, Div, sep = " / ")))
+                             TRUE ~ paste(Conf, Div, sep = " / "))) |> 
+  left_join(teaminfo_elf, by = c("Season", "Franchise"))
 
 # VISUALISE ----
 ggplot(dat) +
-  aes(x = Week, y = Pct, color = Franchise) +
-  geom_line(linewidth = 1.5, alpha = 2/3) +
-  geom_point(mapping = aes(shape = bye), size = 3, alpha = 3/4, show.legend = FALSE) +
+  aes(x = Week, y = Pct, group = Franchise, color = Abb3) +
+  # geom_line(linewidth = 1.5, alpha = .85) +
+  geomtextpath::geom_textline(aes(label = Abb3), size = 4, alpha = .85, linewidth = 1.5, hjust = .99, show.legend = FALSE
+  geom_point(mapping = aes(shape = bye), size = 3, alpha = .85, show.legend = FALSE) +
   scale_x_continuous(breaks = seq(2, 20, by = 4), minor_breaks = seq(0, 20, by = 2)) +
   scale_y_continuous(lim = c(0, 1)) +
   scale_shape_manual(values = c(19, NA)) +
-  # scale_color_viridis_d(option = "H") +
-  scale_color_brewer(palette = "YlOrBr") +
+  scale_color_brewer(palette = "Purples") +
   facet_wrap(~Season+ConfDiv, ncol = 2) +
   labs(title = paste("ELF RS Ongoing for the", selection),
        subtitle = "Opponents according to Conference/Division") +theme_bw(base_size = 13) +
