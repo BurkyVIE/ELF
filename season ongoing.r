@@ -19,7 +19,7 @@ dat <- filter(teaminfo_elf, Franchise == selection) |>
 ggplot(dat) +
   aes(x = Week, y = Pct, group = Franchise, color = Abb3) +
   # geom_line(linewidth = 1.5, alpha = .85) +
-  geomtextpath::geom_textline(aes(label = Abb3), size = 4, alpha = .85, linewidth = 1.5, hjust = .99, show.legend = FALSE
+  geomtextpath::geom_textline(aes(label = Abb3), size = 4, alpha = .85, linewidth = 1.5, hjust = .99, show.legend = FALSE) +
   geom_point(mapping = aes(shape = bye), size = 3, alpha = .85, show.legend = FALSE) +
   scale_x_continuous(breaks = seq(2, 20, by = 4), minor_breaks = seq(0, 20, by = 2)) +
   scale_y_continuous(lim = c(0, 1)) +
@@ -37,3 +37,4 @@ plot(p)
 
 # CLEAN UP ----
 rm(selection, dat, p)
+
