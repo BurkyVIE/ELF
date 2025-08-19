@@ -83,6 +83,5 @@ standings <- mutate(data, one = 1L) |>
 rm(base, data)
 
 # RESPONSE ----
-cat("..ELF > games, results and standings generated ✔\n")
-
+cat("\033[1;34m..ELF >\033[0m games, results and standings generated \033[1;92m✔\033[0m\n")
 

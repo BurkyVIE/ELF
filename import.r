@@ -27,7 +27,7 @@ data_raw <- dir(pattern = "\\d{4}.*ELF\\.txt", recursive = TRUE) |>
   import()
 
 # RESPONSE ----
-cat("..ELF > raw data imported ✔\n")
+cat("\033[1;34m..ELF >\033[0m raw_data imported \033[1;92m✔\033[0m\n")
 
 # CLEAN UP ----
 rm(import)

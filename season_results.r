@@ -1,6 +1,7 @@
+# LIBRARIES ----
 library(tidyverse)
 
-# data ----
+# DATA ----
 he <- results |>
   select(Season, Week, Team, Result, PF, PA) |> 
   mutate(Result = factor(Result, levels = c("W", "L", "T")),
@@ -19,7 +20,6 @@ he <- results |>
          Pct = num((W + 1/2 * T) / (W + L + T), digits = 3, label = "rd_3")) |> 
   relocate(EoS, .after = Pct)
 
-# strength of
 ## Strength of Schedule ----
 SoS <- function(Sea, Tea) {
   all_opps <- filter(results, Season == Sea, Team == Tea) |> group_by(Season, Opponent) |> summarise(n = n(), .groups = "drop")
@@ -36,10 +36,10 @@ SoV <- function(Sea, Tea) {
   return(res)
 }
 
-# seeds ----
+## Seeds ----
 seeds <- read_delim("Scores/Seeds.txt", quote = "'", col_types = "iic", lazy = FALSE)
 
-# result----
+# RESULT ----
 EoS_results <- left_join(teaminfo_elf |> relocate(Season) |> arrange(Season, Franchise),
                          left_join(filter(he, Part == "RS") |> select(-c(Part, W:T, EoS)),
                                    filter(he, Part == "PS") |> select(-c(Part, W:T)),
@@ -50,4 +50,8 @@ EoS_results <- left_join(teaminfo_elf |> relocate(Season) |> arrange(Season, Fra
   left_join(seeds, by = c("Season", "Franchise")) |> 
   relocate(c(SoV, SoS, Seed), .after = "Pct_RS")
 
+# CLEAN UP ----
 rm(he, SoV, SoS, seeds)
+
+# RESPONSE ----
+cat("\033[1;34m..ELF >\033[0m EoS_results generated \033[1;92m✔\033[0m\n")
