@@ -46,7 +46,7 @@ results <- rows_update(results, tibble(GameID = c("CCLK2307", "LKCC2312"), Team 
 base <- filter(results, Week < 30) |> # no PS games
   select(Season, Week) |>
   unique() |>
-  bind_rows(tibble(Season = c(2022L, 2023L), Week = c(10L, 10L))) |> # general bye weeks in 2022 and 2023 in W10
+  bind_rows(tibble(Season = c(2022L, 2023L, 2025L), Week = c(10L, 10L, 12L))) |> # general bye weeks in 2022 and 2023 in W10 and 2025 in W12
   arrange(Season, Week)
 
 # corresponding teams ----
@@ -84,4 +84,5 @@ rm(base, data)
 
 # RESPONSE ----
 cat("..ELF > games, results and standings generated ✔\n")
+
 
