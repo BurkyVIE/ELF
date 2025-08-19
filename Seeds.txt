@@ -1,0 +1,23 @@
+Season Seed Franchise
+2022 1 'Sea Devils'
+2022 2 Vikings
+2022 3 Dragons
+2022 4 Raiders
+2023 1 Fire
+2023 2 Vikings
+2023 3 Surge
+2023 4 Galaxy
+2023 5 Thunder
+2023 6 Panthers
+2024 1 Vikings
+2024 2 Surge
+2024 3 Fire
+2024 4 Musketeers
+2024 5 Ravens
+2024 6 Bravos
+2025 1 Vikings
+2025 2 Ravens
+2025 3 Surge
+2025 4 Storm
+2025 5 Fire
+2025 6 Bravos

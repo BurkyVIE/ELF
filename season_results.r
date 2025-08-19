@@ -1,5 +1,6 @@
 library(tidyverse)
 
+# data ----
 he <- results |>
   select(Season, Week, Team, Result, PF, PA) |> 
   mutate(Result = factor(Result, levels = c("W", "L", "T")),
@@ -18,10 +19,16 @@ he <- results |>
          Pct = num((W + 1/2 * T) / (W + L + T), digits = 3)) |> 
   relocate(EoS, .after = Pct)
 
+# seeds ----
+seeds <- read_delim("Scores/Seeds.txt", quote = "'", col_types = "iic", lazy = FALSE)
+
+# result----
 EoS_results <- left_join(teaminfo_elf |> relocate(Season) |> arrange(Season, Franchise),
                          left_join(filter(he, Part == "RS") |> select(-c(Part, W:T, EoS)),
                                    filter(he, Part == "PS") |> select(-c(Part, W:T)),
                                    by = c("Team", "Season"), suffix = c("_RS", "_PS")),
-                         by = c("Season", "Team"))
+                         by = c("Season", "Team")) |> 
+  left_join(seeds, by = c("Season", "Franchise")) |> 
+  relocate(Seed, .after = "Pct_RS")
 
 rm(he)
