@@ -16,8 +16,25 @@ he <- results |>
   summarise(across(c(PF, PA, W, L, T), ~sum(.)), EoS = last(EoS), .groups = "drop") |>
   mutate(WLT = case_when(T == 0 ~ paste0("(", W, "-", L, ")"),
                          TRUE ~ paste0("(", W, "-", L, "-", T, ")")),
-         Pct = num((W + 1/2 * T) / (W + L + T), digits = 3)) |> 
+         Pct = num((W + 1/2 * T) / (W + L + T), digits = 3, label = "rd_3")) |> 
   relocate(EoS, .after = Pct)
+
+# strength of
+## Strength of Schedule ----
+SoS <- function(Sea, Tea) {
+  all_opps <- filter(results, Season == Sea, Team == Tea) |> group_by(Season, Opponent) |> summarise(n = n(), .groups = "drop")
+  opp_gs <-left_join(all_opps, EoS_results |> filter(Season == Sea) |> select(Season, Team, Pct = Pct_RS), by = c("Season" = "Season", "Opponent" = "Team"))
+  res <- as.numeric(t(opp_gs$n) %*% opp_gs$Pct / sum(opp_gs$n))
+  return(res)
+}
+
+## Strength of Victory ----
+SoV <- function(Sea, Tea) {
+  def_opps <- filter(results, Season == Sea, Team == Tea, Result == "W") |> group_by(Season, Opponent) |> summarise(n = n(), .groups = "drop")
+  opp_gs <- left_join(def_opps, EoS_results |> filter(Season == Sea) |> select(Season, Team, Pct = Pct_RS), by = c("Season" = "Season", "Opponent" = "Team"))
+  res <- if(dim(opp_gs)[1] == 0) 0 else as.numeric(t(opp_gs$n) %*% opp_gs$Pct / sum(opp_gs$n))
+  return(res)
+}
 
 # seeds ----
 seeds <- read_delim("Scores/Seeds.txt", quote = "'", col_types = "iic", lazy = FALSE)
@@ -27,8 +44,10 @@ EoS_results <- left_join(teaminfo_elf |> relocate(Season) |> arrange(Season, Fra
                          left_join(filter(he, Part == "RS") |> select(-c(Part, W:T, EoS)),
                                    filter(he, Part == "PS") |> select(-c(Part, W:T)),
                                    by = c("Team", "Season"), suffix = c("_RS", "_PS")),
-                         by = c("Season", "Team")) |> 
+                         by = c("Season", "Team")) |>
+  mutate(SoV = num(map2_dbl(Season, Team, ~SoV(.x, .y)), digits = 3, label = "rd_3"),
+         SoS = num(map2_dbl(Season, Team, ~SoS(.x, .y)), digits = 3, label = "rd_3")) |> 
   left_join(seeds, by = c("Season", "Franchise")) |> 
-  relocate(Seed, .after = "Pct_RS")
+  relocate(c(SoV, SoS, Seed), .after = "Pct_RS")
 
-rm(he)
+rm(he, SoV, SoS, seeds)

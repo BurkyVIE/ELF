@@ -20,7 +20,7 @@ games <- data_raw |>
          GameID = str_replace(GameID, "97", "WC"),
          GameID = str_replace(GameID, "98", "PO"),
          GameID = str_replace(GameID, "99", "FI")) |> 
-  ungroup()  |> 
+  ungroup() |> 
   relocate(GameID, .after = "Pts_H")
 
 ## results ----
@@ -46,7 +46,7 @@ results <- rows_update(results, tibble(GameID = c("CCLK2307", "LKCC2312"), Team 
 base <- filter(results, Week < 30) |> # no PS games
   select(Season, Week) |>
   unique() |>
-  bind_rows(tibble(Season = c(2022, 2023), Week = c(10L, 10L))) |> # general bye weeks in 2022 and 2023 in W10
+  bind_rows(tibble(Season = c(2022L, 2023L), Week = c(10L, 10L))) |> # general bye weeks in 2022 and 2023 in W10
   arrange(Season, Week)
 
 # corresponding teams ----
@@ -84,3 +84,4 @@ rm(base, data)
 
 # RESPONSE ----
 cat("..ELF > games, results and standings generated ✔\n")
+

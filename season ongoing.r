@@ -37,4 +37,3 @@ plot(p)
 
 # CLEAN UP ----
 rm(selection, dat, p)
-
