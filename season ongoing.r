@@ -24,7 +24,7 @@ ggplot(dat) +
   scale_x_continuous(breaks = seq(2, 20, by = 4), minor_breaks = seq(0, 20, by = 2)) +
   scale_y_continuous(lim = c(0, 1)) +
   scale_shape_manual(values = c(19, NA)) +
-  scale_color_manual(values = c("#c9a9df", "purple")) +
+  scale_color_manual(values = c("grey50", "purple")) +
   facet_wrap(~Season+ConfDiv, ncol = 2) +
   labs(title = paste("ELF RS Ongoing for the", selection),
        subtitle = "Opponents according to Conference/Division") +theme_bw(base_size = 13) +
@@ -37,3 +37,4 @@ plot(p)
 
 # CLEAN UP ----
 rm(selection, dat, p)
+
