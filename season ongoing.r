@@ -38,4 +38,5 @@ plot(p)
 
 # CLEAN UP ----
 
-rm(selection, dat, p)
+rm(selection, colo, dat, p)
+
