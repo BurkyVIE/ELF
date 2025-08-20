@@ -288,7 +288,8 @@ colors_elf <- list(
 colors_elf <- lapply(colors_elf, unnest_longer, "Season")
 
 # RESPONSE ----
-cat("\033[1;34m..ELF >\033[0m Team data imported \033[1;92m✔\033[0m\n")
+cat("\033[1;34m..ELF >\033[0m teaminfo imported \033[1;92m✔\033[0m\n")
 
 # CLEAN UP ----
+
 rm(present, teamdata_elf)
