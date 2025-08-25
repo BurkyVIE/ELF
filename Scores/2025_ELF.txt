@@ -94,8 +94,8 @@ Week,Kickoff,Guest,Home,Pts_G,Pts_H
 14,2025-08-17 13:00 CET,Helvetic Mercenaries,Prague Lions,12,69
 14,2025-08-17 16:25 CET,Cologne Centurions,Raiders Tirol,6,63
 14,2025-08-17 16:25 CET,Nordic Storm,Rhein Fire,19,27
-#97,2025-08-23 15:00 CET,Madrid Bravos,Stuttgart Surge,,
-#97,2025-08-24 15:00 CET,Rhein Fire,Nordic Storm,,
-#98,2025-08-30 15:00 CET,tbd,Vienna Vikings,,
-#98,2025-08-31 15:00 CET,tbd,Munich Ravens,,
-#99,2025-09-07 15:00 CET,tbd
+97,2025-08-23 15:00 CET,Madrid Bravos,Stuttgart Surge,17,41
+97,2025-08-24 15:00 CET,Rhein Fire,Nordic Storm,23,28
+#98,2025-08-30 15:00 CET,Nordic Storm,Vienna Vikings,,
+#98,2025-08-31 15:00 CET,Stuttgart Surge,Munich Ravens,,
+#99,2025-09-07 15:00 CET,tbd,tbd,, 
